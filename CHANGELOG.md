@@ -3,6 +3,13 @@
 All notable changes to this theme are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
 ## [Unreleased]
+### Added
+- Full theme chrome ported from the prototype: `style.css` (design tokens), `theme.json`, `header.php`, `footer.php`, sticky top bar, sticky masthead, keyboard-operable dropdown nav (`Harbour_Nav_Walker`), flattened mobile nav (`Harbour_Mobile_Nav_Walker`), sticky mobile action bar.
+- Self-hosted Inter (latin-subset woff2), skip link, screen-reader-text and visible-focus utilities for WCAG 2.2 AA.
+- Business-facts helper (`harbour_business()`) that reads harbour-core settings with safe fallbacks, so no phone/address/email is hardcoded in templates and the theme degrades gracefully when the plugin is inactive.
+- `custom-logo` support; real brand logo wired in.
+### Changed
+- Rebranded to the real Harbour Tree Care identity: blue palette (navy #0F136F, sky #2E6FC2/#3F7DC9) replacing the prototype's green/amber, and sans-serif (Inter) headings replacing Fraunces. Layout, spacing and structure unchanged.
 
 ## [0.1.1] - 2026-08-24
 ### Changed
