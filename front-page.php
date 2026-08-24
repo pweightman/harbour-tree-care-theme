@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $img        = get_template_directory_uri() . '/assets/img';
-$u_services = home_url( '/services/' );
+$u_services = home_url( '/tree-surgery-leicestershire/' );
 $u_areas    = home_url( '/areas/' );
 $u_contact  = home_url( '/contact/' );
 $u_about    = home_url( '/about/' );
