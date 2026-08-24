@@ -41,3 +41,13 @@ Later pages (services, areas, about, contact) will add their own items here as t
 | Area coverage lists | Sanity-check the village lists with Neil — they're geographically correct but confirm HTC actually covers each |
 
 The five drafted service pages (felling, stump, clearance, surveys, firewood) and five drafted area pages (Lutterworth, Leicester, Rugby, Market Harborough, Nuneaton) are written to real depth, but are drafts — worth Neil reading for anything that doesn't match how the business actually works.
+
+## Firewood, reviews & gallery (added Phase 6)
+
+| Item | Needs |
+|---|---|
+| Firewood products | Real product names, **volumes** and **prices** (seeded with blank prices → "to confirm"). Set in Harbour → Settings → Firewood |
+| Delivery radius | Confirm the inner (12mi) and outer (20mi) delivery bands and the yard postcode (LE17 5NJ) suit firewood delivery |
+| Delivery windows | Confirm the named slots (Weekday morning/afternoon, Saturday morning) |
+| Reviews | **None entered yet** — the reviews module is live but empty. Add real, named Google/Facebook reviews (Harbour → Reviews) once the Google Business Profile is claimed. Only then set an AggregateRating figure in settings |
+| Job gallery | 3 real jobs seeded (Wellingborough willow, Broughton Astley birch, Bromsgrove site). Add more before/after pairs from the photo library; assign service-type/area terms so they surface on the matching pages |
