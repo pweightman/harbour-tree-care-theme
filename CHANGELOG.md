@@ -4,6 +4,12 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 ### Added
+- Home page (`front-page.php`) ported section by section from the prototype: hero, trust strip, services grid, heritage split, "how it works" process, storm-damage band, testimonials, coverage/areas, firewood, FAQ and the enquiry-form section.
+- Real photography from the asset library wired into the hero, crew and log-store slots; enquiry form rendered via `parts/quote-form-placeholder.php` pending the harbour-core form (Phase 4).
+- Real brand logo reversed for the dark footer; "Website design and hosting by Hynca Consulting Ltd" credit.
+- `CONTENT-TO-VERIFY.md` — the running list of placeholders and unconfirmed claims that replaces the prototype's stripped `data-verify` tooling.
+
+### Added (chrome)
 - Full theme chrome ported from the prototype: `style.css` (design tokens), `theme.json`, `header.php`, `footer.php`, sticky top bar, sticky masthead, keyboard-operable dropdown nav (`Harbour_Nav_Walker`), flattened mobile nav (`Harbour_Mobile_Nav_Walker`), sticky mobile action bar.
 - Self-hosted Inter (latin-subset woff2), skip link, screen-reader-text and visible-focus utilities for WCAG 2.2 AA.
 - Business-facts helper (`harbour_business()`) that reads harbour-core settings with safe fallbacks, so no phone/address/email is hardcoded in templates and the theme degrades gracefully when the plugin is inactive.
