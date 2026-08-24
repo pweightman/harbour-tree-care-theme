@@ -56,6 +56,17 @@ while ( have_posts() ) :
 	</section>
 
 	<?php
+	if ( function_exists( 'harbour_reviews_render' ) ) {
+		$reviews_html = harbour_reviews_render( array( 'count' => 3 ) );
+		if ( $reviews_html ) {
+			echo '<section class="section bg-cream"><div class="wrap"><div class="sec-head reveal"><div class="measure"><p class="eyebrow">' . esc_html__( 'What people say', 'harbour-tree-care' ) . '</p><h2>' . esc_html( sprintf( __( 'Reviews from around %s.', 'harbour-tree-care' ), get_the_title() ) ) . '</h2></div></div>';
+			echo $reviews_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '</div></section>';
+		}
+	}
+	?>
+
+	<?php
 	harbour_cta_band( array(
 		'heading' => sprintf( __( 'Got a tree in %s that needs looking at?', 'harbour-tree-care' ), get_the_title() ),
 		'text'    => __( "Free visit, written quote, no pressure. If it doesn't need the work, we'll say so.", 'harbour-tree-care' ),
