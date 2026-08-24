@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1180px"
+		},
+		"color": {
+			"custom": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "ink",    "color": "#12203A", "name": "Ink" },
+				{ "slug": "forest", "color": "#0F136F", "name": "Navy" },
+				{ "slug": "moss",   "color": "#255697", "name": "Blue" },
+				{ "slug": "amber",  "color": "#2E6FC2", "name": "Sky" },
+				{ "slug": "paper",  "color": "#F1F4F8", "name": "Paper" },
+				{ "slug": "cream",  "color": "#FCFDFF", "name": "Cream" },
+				{ "slug": "stone",  "color": "#DEE4EC", "name": "Stone" }
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"slug": "body",
+					"name": "Inter",
+					"fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "xs",   "name": "XS",   "size": "0.75rem" },
+				{ "slug": "sm",   "name": "Small", "size": "0.875rem" },
+				{ "slug": "base", "name": "Base", "size": "1.0625rem" },
+				{ "slug": "lg",   "name": "Large", "size": "clamp(1.125rem, 0.4vw + 1.05rem, 1.3rem)" },
+				{ "slug": "xl",   "name": "XL",   "size": "clamp(1.35rem, 0.9vw + 1.15rem, 1.75rem)" },
+				{ "slug": "2xl",  "name": "2XL",  "size": "clamp(1.7rem, 1.7vw + 1.25rem, 2.5rem)" },
+				{ "slug": "3xl",  "name": "3XL",  "size": "clamp(2.1rem, 3vw + 1.3rem, 3.4rem)" },
+				{ "slug": "4xl",  "name": "4XL",  "size": "clamp(2.6rem, 5vw + 1.2rem, 4.75rem)" }
+			]
+		},
+		"spacing": {
+			"units": [ "px", "rem", "%", "vw" ]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--paper)",
+			"text": "var(--ink)"
+		},
+		"typography": {
+			"fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+			"fontSize": "1.0625rem",
+			"lineHeight": "1.65"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+					"fontWeight": "700"
+				}
+			}
+		}
+	}
+}
