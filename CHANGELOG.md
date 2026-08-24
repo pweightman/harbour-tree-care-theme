@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 ### Added
+- Templates: single-service, single-area, archive-service, archive-area, page-contact, page-about, generic page, 404, search + searchform, ported from the prototype pages.
+- Reusable helpers: `harbour_page_hero()`, `harbour_cta_band()`, `harbour_quote_card()`.
+- Content-to-verify checklist extended with the service/area page items.
+
+### Added
 - Home page (`front-page.php`) ported section by section from the prototype: hero, trust strip, services grid, heritage split, "how it works" process, storm-damage band, testimonials, coverage/areas, firewood, FAQ and the enquiry-form section.
 - Real photography from the asset library wired into the hero, crew and log-store slots; enquiry form rendered via `parts/quote-form-placeholder.php` pending the harbour-core form (Phase 4).
 - Real brand logo reversed for the dark footer; "Website design and hosting by Hynca Consulting Ltd" credit.

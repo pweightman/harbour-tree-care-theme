@@ -28,3 +28,16 @@ Nothing here has been invented — unconfirmed figures (prices, insurance cover,
 | Logo | High-res PNG in use; convert the EPS masters to SVG for the header (README item 2) |
 
 Later pages (services, areas, about, contact) will add their own items here as they are built (Phase 5).
+
+## Service & area pages (added Phase 5)
+
+| Page | Needs |
+|---|---|
+| Surveys & reports | Confirm which survey standards are offered (e.g. BS 5837, QTRA/VTA risk assessment) and who is qualified to sign — placeholder note is in the page body |
+| Site clearance | Confirm waste carrier registration before the "licensed to carry" line publishes |
+| Firewood | Product names, volumes and prices (currently "Price on request") |
+| Hinckley area | Confirm Hinckley & Bosworth BC process and whether HTC submit TPO applications for clients |
+| All area pages | Distances/orientation and council names are public facts; the **local review slot** on each still needs a genuine review from that area once the Google Business Profile is claimed |
+| Area coverage lists | Sanity-check the village lists with Neil — they're geographically correct but confirm HTC actually covers each |
+
+The five drafted service pages (felling, stump, clearance, surveys, firewood) and five drafted area pages (Lutterworth, Leicester, Rugby, Market Harborough, Nuneaton) are written to real depth, but are drafts — worth Neil reading for anything that doesn't match how the business actually works.
