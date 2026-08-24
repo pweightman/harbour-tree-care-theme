@@ -13,13 +13,30 @@ defined( 'ABSPATH' ) || exit;
 	<div class="wrap">
 		<div class="footer-grid">
 			<div class="footer-brand">
-				<div class="footer-wordmark">
-					<?php echo harbour_brand_svg( 'footer-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — static SVG. ?>
-					<span>
-						<strong><?php echo esc_html( harbour_business( 'name' ) ); ?></strong>
-						<em><?php printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></em>
-					</span>
-				</div>
+				<?php
+				$harbour_logo_id = get_theme_mod( 'custom_logo' );
+				if ( $harbour_logo_id ) {
+					echo wp_get_attachment_image(
+						$harbour_logo_id,
+						'medium',
+						false,
+						array(
+							'class' => 'footer-logo',
+							'alt'   => esc_attr( harbour_business( 'name' ) ),
+						)
+					);
+				} else {
+					?>
+					<div class="footer-wordmark">
+						<?php echo harbour_brand_svg( 'footer-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — static SVG. ?>
+						<span>
+							<strong><?php echo esc_html( harbour_business( 'name' ) ); ?></strong>
+							<em><?php printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></em>
+						</span>
+					</div>
+					<?php
+				}
+				?>
 				<p class="small"><?php esc_html_e( 'Family-run arborists and tree surgeons based at Ashby Magna near Lutterworth. Established in 1977 by Roy Harbour, run today by his son Neil.', 'harbour-tree-care' ); ?></p>
 				<div class="socials">
 					<?php if ( harbour_business( 'facebook' ) ) : ?>
@@ -91,6 +108,7 @@ defined( 'ABSPATH' ) || exit;
 				<a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>"><?php esc_html_e( 'Terms', 'harbour-tree-care' ); ?></a> ·
 				<a href="<?php echo esc_url( home_url( '/accessibility/' ) ); ?>"><?php esc_html_e( 'Accessibility', 'harbour-tree-care' ); ?></a>
 			</div>
+			<div class="footer-credit"><?php esc_html_e( 'Website design and hosting by Hynca Consulting Ltd', 'harbour-tree-care' ); ?></div>
 		</div>
 	</div>
 </footer>
