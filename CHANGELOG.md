@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-24
+### Changed
+- Proved the self-update pipeline end to end: release detection and clean in-place update from GitHub Releases.
+
 ## [0.1.0] - 2026-08-24
 ### Added
 - Initial theme skeleton: header, description, single stylesheet, minimal templates.
