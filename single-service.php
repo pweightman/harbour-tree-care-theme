@@ -71,6 +71,17 @@ while ( have_posts() ) :
 		</div>
 	</section>
 
+	<?php
+	if ( function_exists( 'harbour_reviews_render' ) ) {
+		$reviews_html = harbour_reviews_render( array( 'count' => 3 ) );
+		if ( $reviews_html ) {
+			echo '<section class="section"><div class="wrap"><div class="sec-head reveal"><div class="measure"><p class="eyebrow">' . esc_html__( 'What people say', 'harbour-tree-care' ) . '</p><h2>' . esc_html__( 'From customers across Leicestershire.', 'harbour-tree-care' ) . '</h2></div></div>';
+			echo $reviews_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '</div></section>';
+		}
+	}
+	?>
+
 	<?php if ( function_exists( 'harbour_get_faq' ) && harbour_get_faq( $pid ) ) : ?>
 		<section class="section bg-cream">
 			<div class="wrap wrap-narrow">

@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 ### Added
+- Templates for the new content: page-order-logs (firewood products + log-order form), archive-job and single-job (before/after gallery), plus job-gallery CSS.
+- Dynamic reviews section on service and area pages (renders only when real reviews exist).
+
+### Added
 - Templates: single-service, single-area, archive-service, archive-area, page-contact, page-about, generic page, 404, search + searchform, ported from the prototype pages.
 - Reusable helpers: `harbour_page_hero()`, `harbour_cta_band()`, `harbour_quote_card()`.
 - Content-to-verify checklist extended with the service/area page items.
