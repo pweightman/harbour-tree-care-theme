@@ -36,24 +36,26 @@ defined( 'ABSPATH' ) || exit;
 			<div class="brand"><?php the_custom_logo(); ?></div>
 		<?php else : ?>
 			<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( harbour_business( 'name' ) . ' — home' ); ?>">
-				<?php echo harbour_brand_svg( 'brand-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — static SVG. ?>
+				<?php echo harbour_brand_svg( 'brand-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
 				<span class="brand-fallback">
 					<strong><?php echo esc_html( harbour_business( 'name' ) ); ?></strong>
-					<span><?php printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></span>
+					<span><?php /* translators: %s: year the firm was established. */ printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></span>
 				</span>
 			</a>
 		<?php endif; ?>
 
 		<nav class="nav" aria-label="<?php esc_attr_e( 'Main', 'harbour-tree-care' ); ?>">
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container'      => false,
-				'menu_class'     => 'nav-list',
-				'depth'          => 2,
-				'walker'         => new Harbour_Nav_Walker(),
-				'fallback_cb'    => false,
-			) );
+			wp_nav_menu(
+				array(
+					'theme_location' => 'primary',
+					'container'      => false,
+					'menu_class'     => 'nav-list',
+					'depth'          => 2,
+					'walker'         => new Harbour_Nav_Walker(),
+					'fallback_cb'    => false,
+				)
+			);
 			?>
 		</nav>
 
@@ -74,14 +76,16 @@ defined( 'ABSPATH' ) || exit;
 <div class="mobile-nav" id="mnav">
 	<div class="wrap">
 		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'primary',
-			'container'      => false,
-			'items_wrap'     => '<ul>%3$s</ul>',
-			'depth'          => 2,
-			'walker'         => new Harbour_Mobile_Nav_Walker(),
-			'fallback_cb'    => false,
-		) );
+		wp_nav_menu(
+			array(
+				'theme_location' => 'primary',
+				'container'      => false,
+				'items_wrap'     => '<ul>%3$s</ul>',
+				'depth'          => 2,
+				'walker'         => new Harbour_Mobile_Nav_Walker(),
+				'fallback_cb'    => false,
+			)
+		);
 		?>
 	</div>
 </div>

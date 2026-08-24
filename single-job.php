@@ -15,17 +15,25 @@ while ( have_posts() ) :
 	$before = (int) get_post_meta( $pid, '_harbour_before', true );
 	$after  = (int) get_post_meta( $pid, '_harbour_after', true );
 
-	harbour_page_hero( array(
-		'crumbs'  => array(
-			array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-			array( 'label' => __( 'Our work', 'harbour-tree-care' ), 'url' => get_post_type_archive_link( 'job' ) ),
-			array( 'label' => get_the_title() ),
-		),
-		'eyebrow' => __( 'Our work', 'harbour-tree-care' ),
-		'heading' => get_the_title(),
-		'lead'    => '',
-		'buttons' => null,
-	) );
+	harbour_page_hero(
+		array(
+			'crumbs'  => array(
+				array(
+					'label' => __( 'Home', 'harbour-tree-care' ),
+					'url'   => home_url( '/' ),
+				),
+				array(
+					'label' => __( 'Our work', 'harbour-tree-care' ),
+					'url'   => get_post_type_archive_link( 'job' ),
+				),
+				array( 'label' => get_the_title() ),
+			),
+			'eyebrow' => __( 'Our work', 'harbour-tree-care' ),
+			'heading' => get_the_title(),
+			'lead'    => '',
+			'buttons' => null,
+		)
+	);
 	?>
 	<section class="section">
 		<div class="wrap">
@@ -48,9 +56,11 @@ while ( have_posts() ) :
 		</div>
 	</section>
 	<?php
-	harbour_cta_band( array(
-		'heading' => __( 'Something similar in your garden?', 'harbour-tree-care' ),
-		'text'    => __( 'Free site visit, written quote, everything cleared away.', 'harbour-tree-care' ),
-	) );
+	harbour_cta_band(
+		array(
+			'heading' => __( 'Something similar in your garden?', 'harbour-tree-care' ),
+			'text'    => __( 'Free site visit, written quote, everything cleared away.', 'harbour-tree-care' ),
+		)
+	);
 endwhile;
 get_footer();

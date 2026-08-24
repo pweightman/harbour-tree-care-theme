@@ -9,16 +9,21 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-harbour_page_hero( array(
-	'crumbs'  => array(
-		array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-		array( 'label' => __( 'Order logs', 'harbour-tree-care' ) ),
-	),
-	'eyebrow' => __( 'Seasoned firewood', 'harbour-tree-care' ),
-	'heading' => __( 'Order logs for local delivery.', 'harbour-tree-care' ),
-	'lead'    => __( 'Hardwood from our own tree work, split and seasoned at the yard. Choose a load and send a request — we deliver locally and take payment on delivery.', 'harbour-tree-care' ),
-	'buttons' => array(),
-) );
+harbour_page_hero(
+	array(
+		'crumbs'  => array(
+			array(
+				'label' => __( 'Home', 'harbour-tree-care' ),
+				'url'   => home_url( '/' ),
+			),
+			array( 'label' => __( 'Order logs', 'harbour-tree-care' ) ),
+		),
+		'eyebrow' => __( 'Seasoned firewood', 'harbour-tree-care' ),
+		'heading' => __( 'Order logs for local delivery.', 'harbour-tree-care' ),
+		'lead'    => __( 'Hardwood from our own tree work, split and seasoned at the yard. Choose a load and send a request — we deliver locally and take payment on delivery.', 'harbour-tree-care' ),
+		'buttons' => array(),
+	)
+);
 
 $products = function_exists( 'harbour_firewood_products' ) ? harbour_firewood_products() : array();
 ?>
@@ -32,9 +37,23 @@ $products = function_exists( 'harbour_firewood_products' ) ? harbour_firewood_pr
 					<div class="stack">
 						<?php foreach ( $products as $p ) : ?>
 							<div class="side-card">
-								<h3 style="margin-bottom:.2em"><?php echo esc_html( $p['name'] ); ?> <?php if ( ! empty( $p['price'] ) ) : ?><span class="muted" style="font-family:var(--f-body);font-weight:600"><?php echo esc_html( $p['price'] ); ?></span><?php endif; ?></h3>
-								<?php if ( ! empty( $p['description'] ) ) : ?><p class="small muted mb-0"><?php echo esc_html( $p['description'] ); ?></p><?php endif; ?>
-								<?php if ( 'out' === ( $p['availability'] ?? 'in' ) ) : ?><p class="small mb-0" style="color:var(--amber-dk)"><?php esc_html_e( 'Currently out of stock', 'harbour-tree-care' ); ?></p><?php elseif ( 'low' === ( $p['availability'] ?? '' ) ) : ?><p class="small mb-0"><?php esc_html_e( 'Low stock', 'harbour-tree-care' ); ?></p><?php endif; ?>
+								<h3 style="margin-bottom:.2em"><?php echo esc_html( $p['name'] ); ?>
+								<?php
+								if ( ! empty( $p['price'] ) ) :
+									?>
+									<span class="muted" style="font-family:var(--f-body);font-weight:600"><?php echo esc_html( $p['price'] ); ?></span><?php endif; ?></h3>
+								<?php
+								if ( ! empty( $p['description'] ) ) :
+									?>
+									<p class="small muted mb-0"><?php echo esc_html( $p['description'] ); ?></p><?php endif; ?>
+								<?php
+								if ( 'out' === ( $p['availability'] ?? 'in' ) ) :
+									?>
+									<p class="small mb-0" style="color:var(--amber-dk)"><?php esc_html_e( 'Currently out of stock', 'harbour-tree-care' ); ?></p>
+									<?php
+elseif ( 'low' === ( $p['availability'] ?? '' ) ) :
+	?>
+									<p class="small mb-0"><?php esc_html_e( 'Low stock', 'harbour-tree-care' ); ?></p><?php endif; ?>
 							</div>
 						<?php endforeach; ?>
 					</div>

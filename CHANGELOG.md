@@ -4,6 +4,13 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 ### Added
+- `inc/performance.php`: dequeue block-library/global-styles CSS, disable emoji, oEmbed and XML-RPC, trim wp_head, drop wp-embed on the front end.
+- AVIF + WebP versions of the hero, crew and log-store images, served via a `harbour_picture()` `<picture>` helper (AVIF → WebP → JPG), hero prioritised.
+- CI workflow (php -l + PHPCS WordPress-Extra) and a dev composer.json.
+### Changed
+- Theme is clean against WordPress-Extra (PHPCS): output escaping, translator comments, and fixes for a WP global-variable clash (`$s`) and reserved parameter names.
+
+### Added
 - Templates for the new content: page-order-logs (firewood products + log-order form), archive-job and single-job (before/after gallery), plus job-gallery CSS.
 - Dynamic reviews section on service and area pages (renders only when real reviews exist).
 

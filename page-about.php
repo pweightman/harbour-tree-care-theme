@@ -10,23 +10,37 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 $img = get_template_directory_uri() . '/assets/img';
 
-harbour_page_hero( array(
-	'crumbs'  => array(
-		array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-		array( 'label' => __( 'About', 'harbour-tree-care' ) ),
-	),
-	'eyebrow' => __( 'About us', 'harbour-tree-care' ),
-	'heading' => __( 'One family, one yard, forty-nine years.', 'harbour-tree-care' ),
-	'lead'    => __( 'Harbour Tree Care has been looking after trees in Leicestershire since 1977. Same family, same village, same standards — which in this trade is rarer than it should be.', 'harbour-tree-care' ),
-	'buttons' => array(),
-) );
+harbour_page_hero(
+	array(
+		'crumbs'  => array(
+			array(
+				'label' => __( 'Home', 'harbour-tree-care' ),
+				'url'   => home_url( '/' ),
+			),
+			array( 'label' => __( 'About', 'harbour-tree-care' ) ),
+		),
+		'eyebrow' => __( 'About us', 'harbour-tree-care' ),
+		'heading' => __( 'One family, one yard, forty-nine years.', 'harbour-tree-care' ),
+		'lead'    => __( 'Harbour Tree Care has been looking after trees in Leicestershire since 1977. Same family, same village, same standards — which in this trade is rarer than it should be.', 'harbour-tree-care' ),
+		'buttons' => array(),
+	)
+);
 ?>
 <section class="section">
 	<div class="wrap">
 		<div class="split">
 			<div class="split-media reveal">
 				<div class="arch">
-					<img src="<?php echo esc_url( $img . '/crew.jpg' ); ?>" width="1200" height="1600" alt="<?php esc_attr_e( 'The Harbour Tree Care team on site in Leicestershire', 'harbour-tree-care' ); ?>" loading="lazy" decoding="async">
+					<?php
+					harbour_picture(
+						'crew',
+						array(
+							'alt'    => __( 'The Harbour Tree Care team on site in Leicestershire', 'harbour-tree-care' ),
+							'width'  => 1200,
+							'height' => 1600,
+						)
+					);
+					?>
 				</div>
 				<div class="media-note"><b>1977</b><span><?php esc_html_e( 'Roy Harbour starts out', 'harbour-tree-care' ); ?></span></div>
 			</div>
@@ -68,7 +82,8 @@ harbour_page_hero( array(
 			echo '</div>';
 		endif;
 		?>
-		<p><?php
+		<p>
+		<?php
 			printf(
 				/* translators: 1: company name, 2: company number, 3: address. */
 				esc_html__( '%1$s Ltd is registered in England, company number %2$s, with its yard at %3$s.', 'harbour-tree-care' ),
@@ -76,15 +91,18 @@ harbour_page_hero( array(
 				esc_html( harbour_business( 'company_no' ) ),
 				esc_html( harbour_business( 'addr_line1' ) . ', ' . harbour_business( 'addr_line2' ) . ', ' . harbour_business( 'addr_county' ) . ' ' . harbour_business( 'addr_post' ) )
 			);
-		?></p>
+			?>
+		</p>
 	</div>
 </section>
 
 <?php
-harbour_cta_band( array(
-	'heading' => __( 'Gardens, farms, estates and building sites.', 'harbour-tree-care' ),
-	'text'    => __( 'Roughly half our work is domestic; the rest is farms, estates, schools, parish councils, managing agents and developers. Tell us about a job.', 'harbour-tree-care' ),
-	'button_label' => __( 'Talk to us about a job', 'harbour-tree-care' ),
-) );
+harbour_cta_band(
+	array(
+		'heading'      => __( 'Gardens, farms, estates and building sites.', 'harbour-tree-care' ),
+		'text'         => __( 'Roughly half our work is domestic; the rest is farms, estates, schools, parish councils, managing agents and developers. Tell us about a job.', 'harbour-tree-care' ),
+		'button_label' => __( 'Talk to us about a job', 'harbour-tree-care' ),
+	)
+);
 
 get_footer();

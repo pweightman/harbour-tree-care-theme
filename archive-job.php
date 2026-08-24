@@ -9,16 +9,21 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-harbour_page_hero( array(
-	'crumbs'  => array(
-		array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-		array( 'label' => __( 'Our work', 'harbour-tree-care' ) ),
-	),
-	'eyebrow' => __( 'Our work', 'harbour-tree-care' ),
-	'heading' => __( 'Before and after, across the county.', 'harbour-tree-care' ),
-	'lead'    => __( 'A few of the jobs we\'ve done recently — pruning, felling, stump grinding and clearance around Leicestershire. Photos are our own work, not stock.', 'harbour-tree-care' ),
-	'buttons' => null,
-) );
+harbour_page_hero(
+	array(
+		'crumbs'  => array(
+			array(
+				'label' => __( 'Home', 'harbour-tree-care' ),
+				'url'   => home_url( '/' ),
+			),
+			array( 'label' => __( 'Our work', 'harbour-tree-care' ) ),
+		),
+		'eyebrow' => __( 'Our work', 'harbour-tree-care' ),
+		'heading' => __( 'Before and after, across the county.', 'harbour-tree-care' ),
+		'lead'    => __( 'A few of the jobs we\'ve done recently — pruning, felling, stump grinding and clearance around Leicestershire. Photos are our own work, not stock.', 'harbour-tree-care' ),
+		'buttons' => null,
+	)
+);
 ?>
 <section class="section">
 	<div class="wrap">
