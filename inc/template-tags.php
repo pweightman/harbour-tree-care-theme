@@ -92,3 +92,103 @@ function harbour_brand_svg( string $class = 'brand-mark' ): string {
 		esc_attr( $class )
 	);
 }
+
+/**
+ * Render a page hero (breadcrumbs, eyebrow, h1, lead, optional buttons).
+ *
+ * @param array $args eyebrow, heading, lead, crumbs[], buttons[]|null.
+ */
+function harbour_page_hero( array $args ): void {
+	$args = wp_parse_args( $args, array(
+		'eyebrow'  => '',
+		'heading'  => '',
+		'lead'     => '',
+		'crumbs'   => array(),
+		'buttons'  => null, // null = default quote+call; array() = none.
+	) );
+	?>
+	<section class="page-hero grain">
+		<div class="wrap">
+			<?php if ( $args['crumbs'] ) : ?>
+				<ol class="crumbs">
+					<?php
+					$last = count( $args['crumbs'] ) - 1;
+					foreach ( $args['crumbs'] as $i => $crumb ) :
+						if ( $i === $last || empty( $crumb['url'] ) ) :
+							echo '<li>' . esc_html( $crumb['label'] ) . '</li>';
+						else :
+							echo '<li><a href="' . esc_url( $crumb['url'] ) . '">' . esc_html( $crumb['label'] ) . '</a></li>';
+						endif;
+					endforeach;
+					?>
+				</ol>
+			<?php endif; ?>
+			<?php if ( $args['eyebrow'] ) : ?><p class="eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></p><?php endif; ?>
+			<h1><?php echo esc_html( $args['heading'] ); ?></h1>
+			<?php if ( $args['lead'] ) : ?><p class="lead"><?php echo esc_html( $args['lead'] ); ?></p><?php endif; ?>
+			<?php
+			$buttons = $args['buttons'];
+			if ( null === $buttons ) {
+				$buttons = array(
+					array( 'label' => __( 'Get a free quote', 'harbour-tree-care' ), 'href' => home_url( '/contact/' ), 'class' => 'btn-primary' ),
+					array( 'label' => sprintf( __( 'Call %s', 'harbour-tree-care' ), harbour_business( 'phone_yard' ) ), 'href' => harbour_tel_href( harbour_business( 'phone_yard' ) ), 'class' => 'btn-ghost' ),
+				);
+			}
+			if ( $buttons ) :
+				echo '<div class="btn-row">';
+				foreach ( $buttons as $b ) {
+					printf( '<a class="btn %s" href="%s">%s</a>', esc_attr( $b['class'] ), esc_url( $b['href'] ), esc_html( $b['label'] ) );
+				}
+				echo '</div>';
+			endif;
+			?>
+		</div>
+	</section>
+	<?php
+}
+
+/**
+ * Render the recurring call-to-action band.
+ *
+ * @param array $args heading, text, button_label, button_href.
+ */
+function harbour_cta_band( array $args ): void {
+	$args = wp_parse_args( $args, array(
+		'heading'      => __( 'Got a tree that needs looking at?', 'harbour-tree-care' ),
+		'text'         => __( 'Free visit, written quote, no pressure. If it doesn\'t need the work, we\'ll say so.', 'harbour-tree-care' ),
+		'button_label' => __( 'Request a quote', 'harbour-tree-care' ),
+		'button_href'  => home_url( '/contact/' ),
+	) );
+	?>
+	<section class="section-sm">
+		<div class="wrap">
+			<div class="band reveal">
+				<div>
+					<h2><?php echo esc_html( $args['heading'] ); ?></h2>
+					<p><?php echo esc_html( $args['text'] ); ?></p>
+				</div>
+				<div class="btn-row">
+					<a class="btn btn-primary btn-lg" href="<?php echo esc_url( $args['button_href'] ); ?>"><?php echo esc_html( $args['button_label'] ); ?></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+}
+
+/**
+ * Sidebar "quote" card, reused on service/area pages.
+ *
+ * @param string $heading Card heading.
+ * @param string $blurb   Small text.
+ */
+function harbour_quote_card( string $heading, string $blurb ): void {
+	?>
+	<div class="side-card">
+		<h3><?php echo esc_html( $heading ); ?></h3>
+		<p class="small muted"><?php echo esc_html( $blurb ); ?></p>
+		<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" style="width:100%"><?php esc_html_e( 'Request a quote', 'harbour-tree-care' ); ?></a>
+		<p class="small mb-0" style="margin-top:1rem"><a href="<?php echo esc_attr( harbour_tel_href( harbour_business( 'phone_yard' ) ) ); ?>"><?php echo esc_html( harbour_business( 'phone_yard' ) ); ?></a></p>
+	</div>
+	<?php
+}
