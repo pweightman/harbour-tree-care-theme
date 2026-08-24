@@ -51,10 +51,10 @@ class Harbour_Nav_Walker extends Walker_Nav_Menu {
 				'<li%s>',
 				$current ? ' aria-current="page"' : ''
 			);
-			$caret = $has_children
+			$caret   = $has_children
 				? ' <svg class="caret" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M2 4l3 3 3-3"/></svg>'
 				: '';
-			$aria = $has_children ? ' aria-haspopup="true" aria-expanded="false"' : '';
+			$aria    = $has_children ? ' aria-haspopup="true" aria-expanded="false"' : '';
 			$output .= sprintf(
 				'<a href="%s"%s>%s%s</a>',
 				esc_url( $url ),
@@ -63,7 +63,7 @@ class Harbour_Nav_Walker extends Walker_Nav_Menu {
 				$caret
 			);
 		} else {
-			$desc  = ! empty( $item->description ) ? '<small>' . esc_html( $item->description ) . '</small>' : '';
+			$desc    = ! empty( $item->description ) ? '<small>' . esc_html( $item->description ) . '</small>' : '';
 			$output .= '<li>';
 			$output .= sprintf(
 				'<a href="%s">%s%s</a>',

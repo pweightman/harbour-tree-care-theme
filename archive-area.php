@@ -9,18 +9,27 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-harbour_page_hero( array(
-	'crumbs'  => array(
-		array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-		array( 'label' => __( 'Areas covered', 'harbour-tree-care' ) ),
-	),
-	'eyebrow' => __( 'Where we work', 'harbour-tree-care' ),
-	'heading' => __( 'Based at Ashby Magna. Out across five counties.', 'harbour-tree-care' ),
-	'lead'    => __( "Most weeks we're within half an hour of the yard — Lutterworth, Hinckley, Leicester, Rugby, Market Harborough and the villages in between. For larger contracts, surveys and estate work we travel further.", 'harbour-tree-care' ),
-	'buttons' => array(
-		array( 'label' => __( 'Check if we cover you', 'harbour-tree-care' ), 'href' => home_url( '/contact/' ), 'class' => 'btn-primary' ),
-	),
-) );
+harbour_page_hero(
+	array(
+		'crumbs'  => array(
+			array(
+				'label' => __( 'Home', 'harbour-tree-care' ),
+				'url'   => home_url( '/' ),
+			),
+			array( 'label' => __( 'Areas covered', 'harbour-tree-care' ) ),
+		),
+		'eyebrow' => __( 'Where we work', 'harbour-tree-care' ),
+		'heading' => __( 'Based at Ashby Magna. Out across five counties.', 'harbour-tree-care' ),
+		'lead'    => __( "Most weeks we're within half an hour of the yard — Lutterworth, Hinckley, Leicester, Rugby, Market Harborough and the villages in between. For larger contracts, surveys and estate work we travel further.", 'harbour-tree-care' ),
+		'buttons' => array(
+			array(
+				'label' => __( 'Check if we cover you', 'harbour-tree-care' ),
+				'href'  => home_url( '/contact/' ),
+				'class' => 'btn-primary',
+			),
+		),
+	)
+);
 ?>
 
 <section class="section">
@@ -40,7 +49,7 @@ harbour_page_hero( array(
 				<a class="card reveal" href="<?php the_permalink(); ?>">
 					<h3><?php the_title(); ?></h3>
 					<p><?php echo esc_html( get_the_excerpt() ); ?></p>
-					<span class="link-arrow"><?php printf( esc_html__( 'Tree surgeons in %s', 'harbour-tree-care' ), esc_html( get_the_title() ) ); ?> &rarr;</span>
+					<span class="link-arrow"><?php /* translators: %s: town or area name. */ printf( esc_html__( 'Tree surgeons in %s', 'harbour-tree-care' ), esc_html( get_the_title() ) ); ?> &rarr;</span>
 				</a>
 			<?php endwhile; ?>
 		</div>
@@ -48,10 +57,12 @@ harbour_page_hero( array(
 </section>
 
 <?php
-harbour_cta_band( array(
-	'heading' => __( "Not sure if you're in range?", 'harbour-tree-care' ),
-	'text'    => __( "Send your postcode. If we can't help, we'll usually know someone local who can.", 'harbour-tree-care' ),
-	'button_label' => __( 'Ask us', 'harbour-tree-care' ),
-) );
+harbour_cta_band(
+	array(
+		'heading'      => __( "Not sure if you're in range?", 'harbour-tree-care' ),
+		'text'         => __( "Send your postcode. If we can't help, we'll usually know someone local who can.", 'harbour-tree-care' ),
+		'button_label' => __( 'Ask us', 'harbour-tree-care' ),
+	)
+);
 
 get_footer();

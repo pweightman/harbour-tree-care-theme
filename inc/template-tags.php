@@ -81,7 +81,7 @@ function harbour_tel_href( string $number ): string {
  * @param string $class CSS class for the <svg>.
  * @return string SVG markup (already escaped/static).
  */
-function harbour_brand_svg( string $class = 'brand-mark' ): string {
+function harbour_brand_svg( string $classname = 'brand-mark' ): string {
 	return sprintf(
 		'<svg class="%s" viewBox="0 0 44 44" aria-hidden="true" focusable="false">'
 		. '<circle cx="22" cy="22" r="21" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".28"/>'
@@ -89,7 +89,7 @@ function harbour_brand_svg( string $class = 'brand-mark' ): string {
 		. '<path d="M22 24l-5-5M22 21l5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
 		. '<path d="M15 15a4 4 0 1 1 4-4M29 15a4 4 0 1 0-4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>'
 		. '</svg>',
-		esc_attr( $class )
+		esc_attr( $classname )
 	);
 }
 
@@ -99,13 +99,16 @@ function harbour_brand_svg( string $class = 'brand-mark' ): string {
  * @param array $args eyebrow, heading, lead, crumbs[], buttons[]|null.
  */
 function harbour_page_hero( array $args ): void {
-	$args = wp_parse_args( $args, array(
-		'eyebrow'  => '',
-		'heading'  => '',
-		'lead'     => '',
-		'crumbs'   => array(),
-		'buttons'  => null, // null = default quote+call; array() = none.
-	) );
+	$args = wp_parse_args(
+		$args,
+		array(
+			'eyebrow' => '',
+			'heading' => '',
+			'lead'    => '',
+			'crumbs'  => array(),
+			'buttons' => null, // Null uses the default quote and call buttons; pass an empty array for none.
+		)
+	);
 	?>
 	<section class="page-hero grain">
 		<div class="wrap">
@@ -123,15 +126,29 @@ function harbour_page_hero( array $args ): void {
 					?>
 				</ol>
 			<?php endif; ?>
-			<?php if ( $args['eyebrow'] ) : ?><p class="eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></p><?php endif; ?>
+			<?php
+			if ( $args['eyebrow'] ) :
+				?>
+				<p class="eyebrow"><?php echo esc_html( $args['eyebrow'] ); ?></p><?php endif; ?>
 			<h1><?php echo esc_html( $args['heading'] ); ?></h1>
-			<?php if ( $args['lead'] ) : ?><p class="lead"><?php echo esc_html( $args['lead'] ); ?></p><?php endif; ?>
+			<?php
+			if ( $args['lead'] ) :
+				?>
+				<p class="lead"><?php echo esc_html( $args['lead'] ); ?></p><?php endif; ?>
 			<?php
 			$buttons = $args['buttons'];
 			if ( null === $buttons ) {
 				$buttons = array(
-					array( 'label' => __( 'Get a free quote', 'harbour-tree-care' ), 'href' => home_url( '/contact/' ), 'class' => 'btn-primary' ),
-					array( 'label' => sprintf( __( 'Call %s', 'harbour-tree-care' ), harbour_business( 'phone_yard' ) ), 'href' => harbour_tel_href( harbour_business( 'phone_yard' ) ), 'class' => 'btn-ghost' ),
+					array(
+						'label' => __( 'Get a free quote', 'harbour-tree-care' ),
+						'href'  => home_url( '/contact/' ),
+						'class' => 'btn-primary',
+					),
+					array(
+						'label' => /* translators: %s: phone number. */ sprintf( __( 'Call %s', 'harbour-tree-care' ), harbour_business( 'phone_yard' ) ),
+						'href'  => harbour_tel_href( harbour_business( 'phone_yard' ) ),
+						'class' => 'btn-ghost',
+					),
 				);
 			}
 			if ( $buttons ) :
@@ -153,12 +170,15 @@ function harbour_page_hero( array $args ): void {
  * @param array $args heading, text, button_label, button_href.
  */
 function harbour_cta_band( array $args ): void {
-	$args = wp_parse_args( $args, array(
-		'heading'      => __( 'Got a tree that needs looking at?', 'harbour-tree-care' ),
-		'text'         => __( 'Free visit, written quote, no pressure. If it doesn\'t need the work, we\'ll say so.', 'harbour-tree-care' ),
-		'button_label' => __( 'Request a quote', 'harbour-tree-care' ),
-		'button_href'  => home_url( '/contact/' ),
-	) );
+	$args = wp_parse_args(
+		$args,
+		array(
+			'heading'      => __( 'Got a tree that needs looking at?', 'harbour-tree-care' ),
+			'text'         => __( 'Free visit, written quote, no pressure. If it doesn\'t need the work, we\'ll say so.', 'harbour-tree-care' ),
+			'button_label' => __( 'Request a quote', 'harbour-tree-care' ),
+			'button_href'  => home_url( '/contact/' ),
+		)
+	);
 	?>
 	<section class="section-sm">
 		<div class="wrap">
@@ -191,4 +211,40 @@ function harbour_quote_card( string $heading, string $blurb ): void {
 		<p class="small mb-0" style="margin-top:1rem"><a href="<?php echo esc_attr( harbour_tel_href( harbour_business( 'phone_yard' ) ) ); ?>"><?php echo esc_html( harbour_business( 'phone_yard' ) ); ?></a></p>
 	</div>
 	<?php
+}
+
+/**
+ * Output a <picture> with AVIF/WebP sources and a JPG fallback for a theme
+ * image in assets/img (three files with the same basename must exist).
+ *
+ * @param string $basename File basename without extension, e.g. 'hero-climber'.
+ * @param array  $args     alt, width, height, eager (bool), class.
+ */
+function harbour_picture( string $basename, array $args = array() ): void {
+	$args      = wp_parse_args(
+		$args,
+		array(
+			'alt'    => '',
+			'width'  => '',
+			'height' => '',
+			'eager'  => false,
+			'class'  => '',
+		)
+	);
+	$dir       = get_template_directory_uri() . '/assets/img/';
+	$img_attrs = sprintf(
+		'src="%s" alt="%s"%s%s %s decoding="async"%s',
+		esc_url( $dir . $basename . '.jpg' ),
+		esc_attr( $args['alt'] ),
+		$args['width'] ? ' width="' . esc_attr( $args['width'] ) . '"' : '',
+		$args['height'] ? ' height="' . esc_attr( $args['height'] ) . '"' : '',
+		$args['eager'] ? 'fetchpriority="high"' : 'loading="lazy"',
+		$args['class'] ? ' class="' . esc_attr( $args['class'] ) . '"' : ''
+	);
+	printf(
+		'<picture><source type="image/avif" srcset="%s"><source type="image/webp" srcset="%s"><img %s></picture>',
+		esc_url( $dir . $basename . '.avif' ),
+		esc_url( $dir . $basename . '.webp' ),
+		$img_attrs // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from esc_* above.
+	);
 }

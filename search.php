@@ -9,20 +9,25 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-harbour_page_hero( array(
-	'eyebrow' => __( 'Search', 'harbour-tree-care' ),
-	/* translators: %s: search query. */
-	'heading' => sprintf( __( 'Results for “%s”', 'harbour-tree-care' ), get_search_query() ),
-	'lead'    => '',
-	'buttons' => array(),
-) );
+harbour_page_hero(
+	array(
+		'eyebrow' => __( 'Search', 'harbour-tree-care' ),
+		/* translators: %s: search query. */
+		'heading' => sprintf( __( 'Results for “%s”', 'harbour-tree-care' ), get_search_query() ),
+		'lead'    => '',
+		'buttons' => array(),
+	)
+);
 ?>
 <section class="section">
 	<div class="wrap wrap-narrow">
 		<div style="margin-bottom:var(--s-6)"><?php get_search_form(); ?></div>
 		<?php if ( have_posts() ) : ?>
 			<div class="stack">
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 					<article <?php post_class( 'search-result' ); ?>>
 						<h2 style="font-size:var(--t-xl)"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<p class="muted"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 40 ) ); ?></p>

@@ -26,15 +26,25 @@ get_header();
 <!-- ================= HERO ================= -->
 <section class="hero">
 	<div class="hero-media">
-		<img src="<?php echo esc_url( $img . '/hero-climber.jpg' ); ?>" width="1200" height="1600" alt="" fetchpriority="high" decoding="async">
+		<?php
+		harbour_picture(
+			'hero-climber',
+			array(
+				'alt'    => '',
+				'width'  => 1200,
+				'height' => 1600,
+				'eager'  => true,
+			)
+		);
+		?>
 	</div>
 	<div class="wrap hero-inner">
-		<span class="hero-badge"><b><?php printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></b> <?php esc_html_e( 'Two generations of the Harbour family', 'harbour-tree-care' ); ?></span>
+		<span class="hero-badge"><b><?php /* translators: %s: year the firm was established. */ printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></b> <?php esc_html_e( 'Two generations of the Harbour family', 'harbour-tree-care' ); ?></span>
 		<h1><?php esc_html_e( 'Tree surgeons in Leicestershire,', 'harbour-tree-care' ); ?> <em><?php esc_html_e( 'in the same family since 1977', 'harbour-tree-care' ); ?></em>.</h1>
 		<p class="lead"><?php esc_html_e( 'One yard at Ashby Magna. Nearly fifty years of pruning, felling, grinding and clearing across Leicestershire, Warwickshire, Northamptonshire, Nottinghamshire and Derbyshire. We come out, we look at the tree, we tell you what it actually needs.', 'harbour-tree-care' ); ?></p>
 		<div class="btn-row">
 			<a class="btn btn-primary btn-lg" href="<?php echo esc_url( $u_contact ); ?>"><?php esc_html_e( 'Book a free site visit', 'harbour-tree-care' ); ?></a>
-			<a class="btn btn-ghost btn-lg" href="<?php echo esc_attr( $tel_yard ); ?>"><?php printf( esc_html__( 'Call %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_yard' ) ) ); ?></a>
+			<a class="btn btn-ghost btn-lg" href="<?php echo esc_attr( $tel_yard ); ?>"><?php /* translators: %s: phone number. */ printf( esc_html__( 'Call %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_yard' ) ) ); ?></a>
 		</div>
 		<ul class="hero-points">
 			<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <?php esc_html_e( 'Free, no-obligation quotes', 'harbour-tree-care' ); ?></li>
@@ -118,7 +128,16 @@ get_header();
 		<div class="split">
 			<div class="split-media reveal">
 				<div class="arch">
-					<img src="<?php echo esc_url( $img . '/crew.jpg' ); ?>" width="1200" height="1600" alt="<?php esc_attr_e( 'The Harbour Tree Care team on site in Leicestershire', 'harbour-tree-care' ); ?>" loading="lazy" decoding="async">
+					<?php
+					harbour_picture(
+						'crew',
+						array(
+							'alt'    => __( 'The Harbour Tree Care team on site in Leicestershire', 'harbour-tree-care' ),
+							'width'  => 1200,
+							'height' => 1600,
+						)
+					);
+					?>
 				</div>
 				<div class="media-note">
 					<b>1977</b>
@@ -180,7 +199,7 @@ get_header();
 				<p><?php esc_html_e( 'Split limbs, a trunk on the shed, a tree leaning over the road after a gale — call the mobile and Neil will tell you straight away whether it\'s a today job or a next-week job.', 'harbour-tree-care' ); ?></p>
 			</div>
 			<div class="btn-row">
-				<a class="btn btn-primary btn-lg" href="<?php echo esc_attr( $tel_mobile ); ?>"><?php printf( esc_html__( 'Call %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_mobile' ) ) ); ?></a>
+				<a class="btn btn-primary btn-lg" href="<?php echo esc_attr( $tel_mobile ); ?>"><?php /* translators: %s: phone number. */ printf( esc_html__( 'Call %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_mobile' ) ) ); ?></a>
 			</div>
 		</div>
 	</div>
@@ -206,7 +225,7 @@ get_header();
 				?>
 				<div class="quote reveal">
 					<div class="stars" aria-label="<?php esc_attr_e( '5 out of 5', 'harbour-tree-care' ); ?>">
-						<?php for ( $s = 0; $s < 5; $s++ ) : ?>
+						<?php for ( $star = 0; $star < 5; $star++ ) : ?>
 							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
 						<?php endfor; ?>
 					</div>
@@ -257,7 +276,16 @@ get_header();
 		<div class="split reverse">
 			<div class="split-media reveal">
 				<div class="arch" style="aspect-ratio:4/3;border-radius:var(--radius-lg)">
-					<img src="<?php echo esc_url( $img . '/firewood-logs.jpg' ); ?>" width="1200" height="1600" alt="<?php esc_attr_e( 'Split seasoned hardwood logs at the Harbour Tree Care yard', 'harbour-tree-care' ); ?>" loading="lazy" decoding="async">
+					<?php
+					harbour_picture(
+						'firewood-logs',
+						array(
+							'alt'    => __( 'Split seasoned hardwood logs at the Harbour Tree Care yard', 'harbour-tree-care' ),
+							'width'  => 1200,
+							'height' => 1600,
+						)
+					);
+					?>
 				</div>
 			</div>
 			<div class="reveal">
@@ -325,8 +353,8 @@ get_header();
 				<h2><?php esc_html_e( 'Tell us about the tree.', 'harbour-tree-care' ); ?></h2>
 				<p class="lead"><?php esc_html_e( "Send a couple of photos and a rough idea of what you're after. We'll come and look, usually within a few days, and give you a written price. No charge and no obligation either way.", 'harbour-tree-care' ); ?></p>
 				<div style="margin-top:var(--s-6);display:grid;gap:var(--s-4)">
-					<a class="link-arrow" href="<?php echo esc_attr( $tel_yard ); ?>"><?php printf( esc_html__( 'Or call the yard on %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_yard' ) ) ); ?> &rarr;</a>
-					<a class="link-arrow" href="<?php echo esc_attr( $tel_mobile ); ?>"><?php printf( esc_html__( "Neil's mobile: %s", 'harbour-tree-care' ), esc_html( harbour_business( 'phone_mobile' ) ) ); ?> &rarr;</a>
+					<a class="link-arrow" href="<?php echo esc_attr( $tel_yard ); ?>"><?php /* translators: %s: phone number. */ printf( esc_html__( 'Or call the yard on %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_yard' ) ) ); ?> &rarr;</a>
+					<a class="link-arrow" href="<?php echo esc_attr( $tel_mobile ); ?>"><?php /* translators: %s: phone number. */ printf( esc_html__( "Neil's mobile: %s", 'harbour-tree-care' ), esc_html( harbour_business( 'phone_mobile' ) ) ); ?> &rarr;</a>
 				</div>
 			</div>
 			<div class="reveal">

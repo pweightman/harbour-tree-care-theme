@@ -28,10 +28,10 @@ defined( 'ABSPATH' ) || exit;
 				} else {
 					?>
 					<div class="footer-wordmark">
-						<?php echo harbour_brand_svg( 'footer-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped — static SVG. ?>
+						<?php echo harbour_brand_svg( 'footer-mark' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static SVG. ?>
 						<span>
 							<strong><?php echo esc_html( harbour_business( 'name' ) ); ?></strong>
-							<em><?php printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></em>
+							<em><?php /* translators: %s: year the firm was established. */ printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></em>
 						</span>
 					</div>
 					<?php
@@ -51,26 +51,30 @@ defined( 'ABSPATH' ) || exit;
 			<div>
 				<h4><?php esc_html_e( 'Services', 'harbour-tree-care' ); ?></h4>
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer_services',
-					'container'      => false,
-					'items_wrap'     => '<ul>%3$s</ul>',
-					'depth'          => 1,
-					'fallback_cb'    => false,
-				) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer_services',
+						'container'      => false,
+						'items_wrap'     => '<ul>%3$s</ul>',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
 				?>
 			</div>
 
 			<div>
 				<h4><?php esc_html_e( 'Areas covered', 'harbour-tree-care' ); ?></h4>
 				<?php
-				wp_nav_menu( array(
-					'theme_location' => 'footer_areas',
-					'container'      => false,
-					'items_wrap'     => '<ul>%3$s</ul>',
-					'depth'          => 1,
-					'fallback_cb'    => false,
-				) );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer_areas',
+						'container'      => false,
+						'items_wrap'     => '<ul>%3$s</ul>',
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
 				?>
 			</div>
 

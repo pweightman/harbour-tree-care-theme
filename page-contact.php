@@ -9,16 +9,21 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
-harbour_page_hero( array(
-	'crumbs'  => array(
-		array( 'label' => __( 'Home', 'harbour-tree-care' ), 'url' => home_url( '/' ) ),
-		array( 'label' => __( 'Contact', 'harbour-tree-care' ) ),
-	),
-	'eyebrow' => __( 'Get in touch', 'harbour-tree-care' ),
-	'heading' => __( 'Tell us about the tree.', 'harbour-tree-care' ),
-	'lead'    => __( "The quickest route to a price is a couple of photos and a postcode. We'll come and look, usually within a few days, and put a fixed price in writing. Free, and no obligation either way.", 'harbour-tree-care' ),
-	'buttons' => array(),
-) );
+harbour_page_hero(
+	array(
+		'crumbs'  => array(
+			array(
+				'label' => __( 'Home', 'harbour-tree-care' ),
+				'url'   => home_url( '/' ),
+			),
+			array( 'label' => __( 'Contact', 'harbour-tree-care' ) ),
+		),
+		'eyebrow' => __( 'Get in touch', 'harbour-tree-care' ),
+		'heading' => __( 'Tell us about the tree.', 'harbour-tree-care' ),
+		'lead'    => __( "The quickest route to a price is a couple of photos and a postcode. We'll come and look, usually within a few days, and put a fixed price in writing. Free, and no obligation either way.", 'harbour-tree-care' ),
+		'buttons' => array(),
+	)
+);
 ?>
 <section class="section">
 	<div class="wrap">
@@ -66,7 +71,7 @@ harbour_page_hero( array(
 	<div class="wrap">
 		<div style="border:1px solid var(--stone);border-radius:var(--radius-lg);overflow:hidden">
 			<div class="map-placeholder" style="aspect-ratio:21/7;display:grid;place-items:center;background:linear-gradient(135deg,var(--stone),var(--stone-dk));color:var(--ink-70);font-size:var(--t-sm);text-align:center;padding:2rem">
-				<span><?php printf( esc_html__( 'Map of the yard at %1$s, %2$s', 'harbour-tree-care' ), esc_html( harbour_business( 'addr_line1' ) ), esc_html( harbour_business( 'addr_post' ) ) ); ?><br><span class="small"><?php esc_html_e( 'Loads as a static image with click-to-load, so the page stays fast and sets no third-party cookies before consent.', 'harbour-tree-care' ); ?></span></span>
+				<span><?php /* translators: 1: address line, 2: postcode. */ printf( esc_html__( 'Map of the yard at %1$s, %2$s', 'harbour-tree-care' ), esc_html( harbour_business( 'addr_line1' ) ), esc_html( harbour_business( 'addr_post' ) ) ); ?><br><span class="small"><?php esc_html_e( 'Loads as a static image with click-to-load, so the page stays fast and sets no third-party cookies before consent.', 'harbour-tree-care' ); ?></span></span>
 			</div>
 		</div>
 	</div>

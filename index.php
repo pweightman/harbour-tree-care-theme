@@ -12,7 +12,10 @@ get_header();
 ?>
 <div class="wrap section">
 	<?php if ( have_posts() ) : ?>
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 			<article <?php post_class( 'stack' ); ?>>
 				<h1 class="mb-0"><?php the_title(); ?></h1>
 				<div class="measure"><?php the_content(); ?></div>

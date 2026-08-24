@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - name: PHP lint
+        run: find . -name '*.php' -not -path './inc/vendor/*' -print0 | xargs -0 -n1 php -l
+      - name: Install dev dependencies
+        run: composer install --no-interaction --no-progress
+      - name: PHPCS (WordPress-Extra)
+        run: vendor/bin/phpcs

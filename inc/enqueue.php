@@ -23,7 +23,10 @@ function harbour_enqueue(): void {
 		get_template_directory_uri() . '/assets/js/site.js',
 		array(),
 		HARBOUR_THEME_VERSION,
-		array( 'strategy' => 'defer', 'in_footer' => true )
+		array(
+			'strategy'  => 'defer',
+			'in_footer' => true,
+		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'harbour_enqueue' );
