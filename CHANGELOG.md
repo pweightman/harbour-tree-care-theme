@@ -3,6 +3,8 @@
 All notable changes to this theme are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
 ## [Unreleased]
+
+## [0.2.0] - 2026-08-24
 ### Added
 - `inc/performance.php`: dequeue block-library/global-styles CSS, disable emoji, oEmbed and XML-RPC, trim wp_head, drop wp-embed on the front end.
 - AVIF + WebP versions of the hero, crew and log-store images, served via a `harbour_picture()` `<picture>` helper (AVIF → WebP → JPG), hero prioritised.
