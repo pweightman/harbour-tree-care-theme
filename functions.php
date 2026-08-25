@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'HARBOUR_THEME_VERSION', '0.3.0' );
+define( 'HARBOUR_THEME_VERSION', '0.3.1' );
 
 $harbour_inc = get_template_directory() . '/inc/';
 

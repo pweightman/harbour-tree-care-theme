@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-08-25
+### Fixed
+- 404 template referenced an undefined `$service_archive`, causing PHP notices on any 404. Defined it before use.
+
 ## [0.3.0] - 2026-08-25
 ### Added
 - New page templates: Prices (`page-tree-surgery-prices.php`) and Emergency (`page-emergency-tree-surgeon-leicestershire.php`), ported from the revised prototype.

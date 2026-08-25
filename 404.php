@@ -9,6 +9,9 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 
+$service_archive = get_post_type_archive_link( 'service' );
+$service_archive = $service_archive ? $service_archive : home_url( '/' );
+
 harbour_page_hero(
 	array(
 		'eyebrow' => __( 'Page not found', 'harbour-tree-care' ),
