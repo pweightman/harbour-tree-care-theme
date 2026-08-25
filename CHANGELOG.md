@@ -4,6 +4,13 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-25
+### Added
+- New page templates: Prices (`page-tree-surgery-prices.php`) and Emergency (`page-emergency-tree-surgeon-leicestershire.php`), ported from the revised prototype.
+### Changed
+- Revised home and about copy (SEO rewrite): hero now leads with the services and a clearer offer; button labels updated.
+- Per-page SEO title + meta description now render from harbour-core fields.
+
 ## [0.2.0] - 2026-08-24
 ### Added
 - `inc/performance.php`: dequeue block-library/global-styles CSS, disable emoji, oEmbed and XML-RPC, trim wp_head, drop wp-embed on the front end.
