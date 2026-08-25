@@ -40,10 +40,10 @@ get_header();
 	</div>
 	<div class="wrap hero-inner">
 		<span class="hero-badge"><b><?php /* translators: %s: year the firm was established. */ printf( esc_html__( 'Est. %s', 'harbour-tree-care' ), esc_html( harbour_business( 'established' ) ) ); ?></b> <?php esc_html_e( 'Two generations of the Harbour family', 'harbour-tree-care' ); ?></span>
-		<h1><?php esc_html_e( 'Tree surgeons in Leicestershire,', 'harbour-tree-care' ); ?> <em><?php esc_html_e( 'in the same family since 1977', 'harbour-tree-care' ); ?></em>.</h1>
-		<p class="lead"><?php esc_html_e( 'One yard at Ashby Magna. Nearly fifty years of pruning, felling, grinding and clearing across Leicestershire, Warwickshire, Northamptonshire, Nottinghamshire and Derbyshire. We come out, we look at the tree, we tell you what it actually needs.', 'harbour-tree-care' ); ?></p>
+		<h1><?php esc_html_e( 'Tree surgeons in Leicestershire,', 'harbour-tree-care' ); ?> <em><?php esc_html_e( 'family-run since 1977', 'harbour-tree-care' ); ?></em>.</h1>
+		<p class="lead"><?php esc_html_e( 'Pruning, felling, stump grinding and site clearance from a family firm near Lutterworth. Free site visit, fixed written price, everything cleared before we leave.', 'harbour-tree-care' ); ?></p>
 		<div class="btn-row">
-			<a class="btn btn-primary btn-lg" href="<?php echo esc_url( $u_contact ); ?>"><?php esc_html_e( 'Book a free site visit', 'harbour-tree-care' ); ?></a>
+			<a class="btn btn-primary btn-lg" href="<?php echo esc_url( $u_contact ); ?>"><?php esc_html_e( 'Get a free quote', 'harbour-tree-care' ); ?></a>
 			<a class="btn btn-ghost btn-lg" href="<?php echo esc_attr( $tel_yard ); ?>"><?php /* translators: %s: phone number. */ printf( esc_html__( 'Call %s', 'harbour-tree-care' ), esc_html( harbour_business( 'phone_yard' ) ) ); ?></a>
 		</div>
 		<ul class="hero-points">
@@ -298,7 +298,7 @@ get_header();
 					<div><b><?php esc_html_e( 'Half load', 'harbour-tree-care' ); ?></b><span><?php esc_html_e( 'Price on request', 'harbour-tree-care' ); ?></span></div>
 					<div><b><?php esc_html_e( 'Full load', 'harbour-tree-care' ); ?></b><span><?php esc_html_e( 'Price on request', 'harbour-tree-care' ); ?></span></div>
 				</div>
-				<a class="btn btn-dark" href="<?php echo esc_url( $u_logs ); ?>"><?php esc_html_e( 'Ask about logs', 'harbour-tree-care' ); ?></a>
+				<a class="btn btn-dark" href="<?php echo esc_url( $u_logs ); ?>"><?php esc_html_e( 'Order logs', 'harbour-tree-care' ); ?></a>
 			</div>
 		</div>
 	</div>

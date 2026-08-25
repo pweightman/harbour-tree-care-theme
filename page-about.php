@@ -101,7 +101,7 @@ harbour_cta_band(
 	array(
 		'heading'      => __( 'Gardens, farms, estates and building sites.', 'harbour-tree-care' ),
 		'text'         => __( 'Roughly half our work is domestic; the rest is farms, estates, schools, parish councils, managing agents and developers. Tell us about a job.', 'harbour-tree-care' ),
-		'button_label' => __( 'Talk to us about a job', 'harbour-tree-care' ),
+		'button_label' => __( 'Get a free quote', 'harbour-tree-care' ),
 	)
 );
 
