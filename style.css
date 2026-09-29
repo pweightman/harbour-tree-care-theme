@@ -3,7 +3,7 @@ Theme Name: Harbour Tree Care
 Theme URI: https://github.com/pweightman/harbour-tree-care-theme
 Author: Patrick Weightman
 Description: Custom theme for Harbour Tree Care, family-run tree surgeons in Leicestershire since 1977.
-Version: 0.3.1
+Version: 0.4.0
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -612,3 +612,33 @@ a:focus-visible,button:focus-visible,.submenu a:focus-visible,
 .job-body h3{font-size:var(--t-lg);margin-bottom:.4em}
 .job-pair-lg{border-radius:var(--radius-lg);overflow:hidden}
 .job-pair-lg .job-shot img{aspect-ratio:3/2}
+
+/* ---------- Advice (blog) ---------- */
+.post-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.post-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.post-card-media{overflow:hidden}
+.post-card-media img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .4s ease}
+.post-card:hover .post-card-media img{transform:scale(1.03)}
+.post-card-body{padding:var(--s-5);display:flex;flex-direction:column;gap:.5rem}
+.post-card-body h3{font-size:var(--t-lg);margin:0}
+.post-card-body p{margin:0}
+.post-meta{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0 0 var(--s-4)}
+
+/* Article */
+.article-hero-img{margin:0 0 var(--s-6)}
+.article-hero-img img{width:100%;height:auto;border-radius:var(--radius-lg);display:block}
+.article-body{max-width:68ch}
+.prose ol{margin:0 0 1.1em;padding-left:1.3em}
+.prose li{margin-bottom:.5em}
+.prose blockquote{margin:var(--s-5) 0;padding:.4rem 0 .4rem var(--s-5);border-left:3px solid var(--amber);color:var(--ink-70);font-size:var(--t-lg);line-height:1.5}
+.prose blockquote p:last-child{margin-bottom:0}
+.prose table{width:100%;border-collapse:collapse;margin:var(--s-5) 0;font-size:var(--t-sm)}
+.prose th,.prose td{border:1px solid var(--stone);padding:.6rem .8rem;text-align:left;vertical-align:top}
+.prose thead th{background:var(--paper);font-weight:600}
+.prose img{border-radius:var(--radius);height:auto}
+.article-cta{margin-top:var(--s-7);padding:var(--s-6);background:var(--cream);border:1px solid var(--stone);border-radius:var(--radius-lg)}
+.article-cta h3{margin-bottom:.3em}
+.article-cta p{color:var(--ink-70)}
+
+/* Latest advice strip on the home page */
+.latest-advice .post-grid{margin-top:var(--s-5)}

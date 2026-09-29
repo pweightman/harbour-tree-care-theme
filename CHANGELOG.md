@@ -4,6 +4,16 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-29
+### Added
+- Advice (blog) templates matching the design system: `home.php` (the `/advice/` index — H1, intro, card grid with featured image, excerpt, date and reading time, pagination, quote CTA band), `single.php` (breadcrumb, meta, comfortable reading-width body with h2/h3/list/table/blockquote styling, an end-of-article CTA that switches to "Order logs" for firewood topics, and 3 related posts), and `archive.php` / `category.php` (the same grid with the category name as H1). Empty `/advice/` shows the intro and "Articles coming soon".
+- "Latest advice" strip (3 most recent posts) on the homepage, hidden when there are no posts.
+- "Related advice" on service pages when posts link to that service.
+- Template helpers: `harbour_reading_time()`, `harbour_is_firewood_post()`, `harbour_post_card()`, `harbour_advice_grid()`, `harbour_related_advice_for_service()`.
+### Changed
+- Blog post structured data (`BlogPosting` + breadcrumb) is now emitted by harbour-core so there is a single JSON-LD source; the standalone script previously in `single.php` has been removed. Requires harbour-core 0.6.0+.
+- Confirmed the theme adds no hard-coded `<title>`, meta description, canonical or Open Graph — `add_theme_support( 'title-tag' )` is on and `wp_head()` is called once, so Rank Math (or harbour-core's fallback) fully controls SEO output.
+
 ## [0.3.1] - 2026-08-25
 ### Fixed
 - 404 template referenced an undefined `$service_archive`, causing PHP notices on any 404. Defined it before use.

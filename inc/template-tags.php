@@ -248,3 +248,134 @@ function harbour_picture( string $basename, array $args = array() ): void {
 		$img_attrs // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from esc_* above.
 	);
 }
+
+/**
+ * Estimated reading time in minutes for a post (min 1).
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return int
+ */
+function harbour_reading_time( $post = null ): int {
+	$post  = get_post( $post );
+	$words = $post ? str_word_count( wp_strip_all_tags( (string) $post->post_content ) ) : 0;
+	return max( 1, (int) ceil( $words / 200 ) );
+}
+
+/**
+ * Is this post a firewood/logs topic? Drives which end-of-article CTA shows.
+ *
+ * @param int|WP_Post|null $post Post.
+ * @return bool
+ */
+function harbour_is_firewood_post( $post = null ): bool {
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return false;
+	}
+	if ( has_tag( array( 'firewood', 'logs', 'wood-burner', 'log' ), $post ) ) {
+		return true;
+	}
+	$hay = strtolower( $post->post_title . ' ' . $post->post_content );
+	foreach ( array( 'firewood', 'wood burner', 'woodburner', 'log burner' ) as $kw ) {
+		if ( false !== strpos( $hay, $kw ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/**
+ * Render one post card (used by the Advice grid and the "Latest advice" strip).
+ *
+ * @param int|WP_Post $post Post.
+ */
+function harbour_post_card( $post ): void {
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return;
+	}
+	?>
+	<a class="card post-card reveal" href="<?php echo esc_url( get_permalink( $post ) ); ?>">
+		<?php if ( has_post_thumbnail( $post ) ) : ?>
+			<div class="post-card-media">
+				<?php
+				echo get_the_post_thumbnail(
+					$post,
+					'medium_large',
+					array(
+						'loading'  => 'lazy',
+						'decoding' => 'async',
+						'alt'      => '',
+					)
+				);
+				?>
+			</div>
+		<?php endif; ?>
+		<div class="post-card-body">
+			<h3><?php echo esc_html( get_the_title( $post ) ); ?></h3>
+			<p class="post-meta small muted">
+				<time datetime="<?php echo esc_attr( get_the_date( 'c', $post ) ); ?>"><?php echo esc_html( get_the_date( '', $post ) ); ?></time>
+				· <?php /* translators: %d: reading time in minutes. */ printf( esc_html__( '%d min read', 'harbour-tree-care' ), absint( harbour_reading_time( $post ) ) ); ?>
+			</p>
+			<p><?php echo esc_html( get_the_excerpt( $post ) ); ?></p>
+			<span class="link-arrow"><?php esc_html_e( 'Read more', 'harbour-tree-care' ); ?> &rarr;</span>
+		</div>
+	</a>
+	<?php
+}
+
+/**
+ * Recent Advice posts that link to a given service page.
+ *
+ * @param int $service_id Service post ID.
+ * @param int $count      Max posts.
+ * @return WP_Post[]
+ */
+function harbour_related_advice_for_service( int $service_id, int $count = 3 ): array {
+	$url  = get_permalink( $service_id );
+	$slug = get_post_field( 'post_name', $service_id );
+	if ( ! $url ) {
+		return array();
+	}
+	$candidates = get_posts(
+		array(
+			'post_type'      => 'post',
+			'post_status'    => 'publish',
+			'posts_per_page' => 30,
+			'orderby'        => 'date',
+			'order'          => 'DESC',
+		)
+	);
+	$matches    = array();
+	foreach ( $candidates as $c ) {
+		if ( false !== strpos( $c->post_content, $url ) || false !== strpos( $c->post_content, '/services/' . $slug . '/' ) ) {
+			$matches[] = $c;
+			if ( count( $matches ) >= $count ) {
+				break;
+			}
+		}
+	}
+	return $matches;
+}
+
+/**
+ * Render an Advice posts grid + pagination for the current query.
+ */
+function harbour_advice_grid(): void {
+	if ( ! have_posts() ) {
+		echo '<p class="lead measure">' . esc_html__( 'Articles coming soon — we\'re writing them. In the meantime, give the yard a ring with any question.', 'harbour-tree-care' ) . '</p>';
+		return;
+	}
+	echo '<div class="cards post-grid">';
+	while ( have_posts() ) {
+		the_post();
+		harbour_post_card( get_post() );
+	}
+	echo '</div>';
+	the_posts_pagination(
+		array(
+			'mid_size'           => 1,
+			'screen_reader_text' => __( 'Advice pages', 'harbour-tree-care' ),
+		)
+	);
+}

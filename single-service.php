@@ -110,6 +110,19 @@ while ( have_posts() ) :
 	<?php endif; ?>
 
 	<?php
+	if ( function_exists( 'harbour_related_advice_for_service' ) ) {
+		$harbour_related_advice = harbour_related_advice_for_service( $pid, 3 );
+		if ( $harbour_related_advice ) {
+			echo '<section class="section bg-cream"><div class="wrap"><div class="sec-head reveal"><div class="measure"><p class="eyebrow">' . esc_html__( 'Advice', 'harbour-tree-care' ) . '</p><h2>' . esc_html__( 'Related advice', 'harbour-tree-care' ) . '</h2></div></div><div class="cards post-grid">';
+			foreach ( $harbour_related_advice as $harbour_ra ) {
+				harbour_post_card( $harbour_ra );
+			}
+			echo '</div></div></section>';
+		}
+	}
+	?>
+
+	<?php
 	harbour_cta_band(
 		array(
 			'heading' => get_the_title() . __( ' — get a free quote', 'harbour-tree-care' ),

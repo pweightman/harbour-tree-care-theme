@@ -374,4 +374,38 @@ get_header();
 </section>
 
 <?php
+$harbour_latest = get_posts(
+	array(
+		'post_type'      => 'post',
+		'post_status'    => 'publish',
+		'posts_per_page' => 3,
+		'orderby'        => 'date',
+		'order'          => 'DESC',
+	)
+);
+if ( $harbour_latest ) :
+	?>
+	<section class="section latest-advice">
+		<div class="wrap">
+			<div class="sec-head reveal">
+				<div class="measure">
+					<p class="eyebrow"><?php esc_html_e( 'Advice', 'harbour-tree-care' ); ?></p>
+					<h2><?php esc_html_e( 'Latest advice', 'harbour-tree-care' ); ?></h2>
+					<p class="lead mb-0"><?php esc_html_e( 'Straight answers on tree care and firewood from a family firm since 1977.', 'harbour-tree-care' ); ?></p>
+				</div>
+				<a class="btn btn-ghost" href="<?php echo esc_url( get_permalink( (int) get_option( 'page_for_posts' ) ) ); ?>"><?php esc_html_e( 'All advice', 'harbour-tree-care' ); ?></a>
+			</div>
+			<div class="cards post-grid">
+				<?php
+				foreach ( $harbour_latest as $harbour_p ) {
+					harbour_post_card( $harbour_p ); }
+				?>
+			</div>
+		</div>
+	</section>
+	<?php
+endif;
+?>
+
+<?php
 get_footer();
