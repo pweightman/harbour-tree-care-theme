@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-09-29
+### Fixed
+- Update checks failed with GitHub API HTTP 403 on shared hosting (the unauthenticated 60-requests/hour-per-IP limit). The update checker now uses an optional GitHub token when the `HARBOUR_GITHUB_TOKEN` constant is defined in `wp-config.php`, raising the limit to 5,000/hour. Without the constant, behaviour is unchanged.
+
 ## [0.4.0] - 2026-09-29
 ### Added
 - Advice (blog) templates matching the design system: `home.php` (the `/advice/` index — H1, intro, card grid with featured image, excerpt, date and reading time, pagination, quote CTA band), `single.php` (breadcrumb, meta, comfortable reading-width body with h2/h3/list/table/blockquote styling, an end-of-article CTA that switches to "Order logs" for firewood topics, and 3 related posts), and `archive.php` / `category.php` (the same grid with the category name as H1). Empty `/advice/` shows the intro and "Articles coming soon".

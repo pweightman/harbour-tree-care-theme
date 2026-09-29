@@ -22,6 +22,14 @@ function harbour_theme_updates(): void {
 		'harbour-tree-care' // Must match the theme directory name exactly.
 	);
 
+	// Optional: authenticate GitHub API calls to avoid the unauthenticated
+	// 60-requests/hour-per-IP limit (which returns HTTP 403 on shared hosting).
+	// Define HARBOUR_GITHUB_TOKEN in wp-config.php with a fine-grained,
+	// read-only "Contents" token to raise the limit to 5,000/hour.
+	if ( defined( 'HARBOUR_GITHUB_TOKEN' ) && HARBOUR_GITHUB_TOKEN ) {
+		$updater->setAuthentication( HARBOUR_GITHUB_TOKEN );
+	}
+
 	// Use the zip attached to the release, not GitHub's source archive.
 	$updater->getVcsApi()->enableReleaseAssets( '/harbour-tree-care\.zip$/i' );
 }
