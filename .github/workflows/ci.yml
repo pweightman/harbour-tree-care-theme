@@ -8,12 +8,17 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: [ '8.1', '8.3', '8.5' ]
+    name: PHP ${{ matrix.php-version }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version: ${{ matrix.php-version }}
           tools: composer
       - name: PHP lint
         run: find . -name '*.php' -not -path './inc/vendor/*' -print0 | xargs -0 -n1 php -l

@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-10-09
+### Changed
+- Verified PHP 8.5 compatibility (production now runs PHP 8.5): clean lint under 8.5 and every page type rendered with no deprecations or warnings. No code changes were required.
+- CI now lints against a PHP matrix of 8.1, 8.3 and 8.5 (was 8.3 only).
+
 ## [0.4.1] - 2026-09-29
 ### Fixed
 - Update checks failed with GitHub API HTTP 403 on shared hosting (the unauthenticated 60-requests/hour-per-IP limit). The update checker now uses an optional GitHub token when the `HARBOUR_GITHUB_TOKEN` constant is defined in `wp-config.php`, raising the limit to 5,000/hour. Without the constant, behaviour is unchanged.
