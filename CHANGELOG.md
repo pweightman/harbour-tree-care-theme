@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-09
+### Added
+- Advice articles now show their topic tags as pill links at the foot of the article. Only tags substantial enough to be topic pages are surfaced — those with at least the shared threshold of linked articles (`harbour_tag_min_posts`, default 3).
+- Tag archives render as proper topic landing pages: clean capitalised heading (no "Tag:" prefix), an intro (the tag description, or a sensible default), the article grid, a Home › Advice › Tag breadcrumb and the quote CTA band. New `harbour_post_tag_links()` / `harbour_tag_min_posts()` helpers and tag-pill styles.
+
 ## [0.4.2] - 2026-10-09
 ### Changed
 - Verified PHP 8.5 compatibility (production now runs PHP 8.5): clean lint under 8.5 and every page type rendered with no deprecations or warnings. No code changes were required.

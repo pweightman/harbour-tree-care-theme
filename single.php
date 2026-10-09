@@ -61,6 +61,8 @@ while ( have_posts() ) :
 
 			<div class="prose article-body"><?php the_content(); ?></div>
 
+			<?php harbour_post_tag_links( $pid ); ?>
+
 			<?php if ( $is_firewood ) : ?>
 				<div class="article-cta">
 					<h3><?php esc_html_e( 'Ready for a load of seasoned logs?', 'harbour-tree-care' ); ?></h3>

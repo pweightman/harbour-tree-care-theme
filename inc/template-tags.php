@@ -285,6 +285,50 @@ function harbour_is_firewood_post( $post = null ): bool {
 }
 
 /**
+ * Minimum linked articles before a tag is treated as a topic page (shown as a
+ * link and given its own indexable archive). Kept in sync with harbour-core via
+ * the shared `harbour_tag_min_posts` filter.
+ *
+ * @return int
+ */
+function harbour_tag_min_posts(): int {
+	return max( 1, (int) apply_filters( 'harbour_tag_min_posts', 3 ) );
+}
+
+/**
+ * Render a post's tags as pill links, limited to tags that have enough articles
+ * to be worth a topic page. Prints nothing when none qualify.
+ *
+ * @param int|WP_Post|null $post Post.
+ */
+function harbour_post_tag_links( $post = null ): void {
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return;
+	}
+	$tags = get_the_tags( $post->ID );
+	if ( empty( $tags ) || is_wp_error( $tags ) ) {
+		return;
+	}
+	$min  = harbour_tag_min_posts();
+	$show = array_filter(
+		$tags,
+		static function ( $t ) use ( $min ) {
+			return (int) $t->count >= $min;
+		}
+	);
+	if ( ! $show ) {
+		return;
+	}
+	echo '<nav class="article-tags" aria-label="' . esc_attr__( 'Topics', 'harbour-tree-care' ) . '">';
+	echo '<span class="article-tags__label">' . esc_html__( 'Topics', 'harbour-tree-care' ) . '</span>';
+	foreach ( $show as $t ) {
+		echo '<a class="tag-pill" href="' . esc_url( get_term_link( $t ) ) . '" rel="tag">' . esc_html( $t->name ) . '</a>';
+	}
+	echo '</nav>';
+}
+
+/**
  * Render one post card (used by the Advice grid and the "Latest advice" strip).
  *
  * @param int|WP_Post $post Post.
