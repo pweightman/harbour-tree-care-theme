@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-10-09
+### Fixed
+- Asset cache-busting: `HARBOUR_THEME_VERSION` was hardcoded at `0.3.1` and never bumped, so `style.css` and `site.js` loaded with `?ver=0.3.1` on every release — meaning CDN/browser caches kept serving the *old* CSS/JS after a theme update. It's now derived from the theme header, so assets bust cache automatically on every update.
+
 ## [0.6.0] - 2026-10-09
 ### Added
 - Favicon: a crisp on-brand SVG (`assets/img/favicon.svg`) — the navy seedling-in-hand mark from the logo — output in the head, so the site shows an icon in browser tabs. It defers automatically to a WordPress Site Icon if one is set (Appearance → Customize → Site Identity), which also covers the iOS home-screen icon.
