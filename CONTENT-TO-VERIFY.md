@@ -10,8 +10,8 @@ Nothing here has been invented — unconfirmed figures (prices, insurance cover,
 |---|---|---|
 | Firewood prices | "Price on request" ×3 (Bulk bag / Half load / Full load) | Real product names, volumes and prices |
 | Reviews | 3 real quote texts, attributed "Google review" only | Real reviewer first name, town and date; ideally pulled live once the Google Business Profile is claimed |
-| Insurance (FAQ "Are you insured?") | "public liability and employer's liability insurance, certificates on request" — general claim, no figures | Confirm cover types and levels, and the insurer, before publishing |
-| Hero point "Qualified climbers, fully insured" | as written | Confirm the insurance/qualification claim |
+| Insurance (FAQ "Are you insured?") | "public liability and employer's liability insurance, certificates on request" | **Confirmed (9 Oct 2026):** the business carries liability insurance, certificates on request. Specific cover levels / insurer still optional to add. |
+| Qualifications ("NPTC-qualified climbers, fully insured"; About → The paperwork) | NPTC-qualified climbers | **Confirmed (9 Oct 2026):** staff hold the relevant NPTC qualifications. Named trade bodies / waste carrier licence still to evidence before adding. |
 | Coverage map | Marked placeholder box | Generate a static map image of the LE17 catchment (not a Google iframe — keeps the page fast and cookie-free) |
 | "49 years on the tools" trust stat | 49 (2026 − 1977) | Confirm the firm has traded continuously since 1977 |
 | Opening hours (footer) | Mon–Fri 7.30am–5.30pm, Sat 8am–1pm | Confirm; confirm whether the yard takes visitors |

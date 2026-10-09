@@ -4,6 +4,14 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-10-09
+### Added
+- Favicon: a crisp on-brand SVG (`assets/img/favicon.svg`) — the navy seedling-in-hand mark from the logo — output in the head, so the site shows an icon in browser tabs. It defers automatically to a WordPress Site Icon if one is set (Appearance → Customize → Site Identity), which also covers the iOS home-screen icon.
+### Changed
+- Credentials confirmed and made specific: the homepage trust point now reads **"NPTC-qualified climbers, fully insured"**, and the About page's "The paperwork" section states that staff hold the relevant NPTC qualifications and the business carries liability insurance (certificates on request). Cleared the matching rows in `CONTENT-TO-VERIFY.md`.
+### Fixed
+- `theme-color` meta was still the old pre-rebrand green (`#1D4230`); updated to the brand navy (`#0F136F`).
+
 ## [0.5.0] - 2026-10-09
 ### Added
 - Advice articles now show their topic tags as pill links at the foot of the article. Only tags substantial enough to be topic pages are surfaced — those with at least the shared threshold of linked articles (`harbour_tag_min_posts`, default 3).

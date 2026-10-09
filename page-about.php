@@ -74,8 +74,9 @@ harbour_page_hero(
 	<div class="wrap wrap-narrow">
 		<p class="eyebrow"><?php esc_html_e( 'Qualifications & cover', 'harbour-tree-care' ); ?></p>
 		<h2><?php esc_html_e( 'The paperwork', 'harbour-tree-care' ); ?></h2>
+		<p class="prose"><?php esc_html_e( 'Our climbers hold the relevant NPTC qualifications for the chainsaw and aerial work we do, and the business carries liability insurance. Certificates are available on request — just ask when we come out to quote.', 'harbour-tree-care' ); ?></p>
 		<?php
-		// Editable body: accreditations/insurance go here once evidenced.
+		// Further accreditations (trade bodies, waste carrier licence) go here once evidenced.
 		if ( trim( get_the_content() ) ) :
 			echo '<div class="prose">';
 			the_content();

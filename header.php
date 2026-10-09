@@ -12,7 +12,10 @@ defined( 'ABSPATH' ) || exit;
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#1D4230">
+	<meta name="theme-color" content="#0F136F">
+	<?php if ( ! has_site_icon() ) : ?>
+		<link rel="icon" href="<?php echo esc_url( get_theme_file_uri( 'assets/img/favicon.svg' ) ); ?>" type="image/svg+xml" sizes="any">
+	<?php endif; ?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
