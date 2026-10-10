@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-10
+First stable release. The theme has delivered the live site across the full page set — home, services, areas, advice, contact — on the real Harbour brand identity, self-hosted fonts and self-updating from GitHub; the templates and design tokens are now considered stable.
+### Fixed
+- **PageSpeed "Agentic Browsing" / accessibility tree**: the homepage review stars were a `<div class="stars" aria-label="5 out of 5">` with no role. `aria-label` is prohibited on a bare `<div>` (implicit `generic` role), which PageSpeed flagged as a prohibited ARIA attribute and a malformed accessibility tree. The element is now `role="img"` carrying the rating as its name (the star SVGs stay `aria-hidden`).
+
 ## [0.6.2] - 2026-10-10
 ### Fixed
 - Logo performance: WordPress ships the custom logo with `sizes="100vw"`, so mobile browsers downloaded a full-width (up to 2560px) image for a mark that renders at ~151px — the page's LCP element and ~428 KiB of waste in PageSpeed. Now sets a correct `sizes` so the browser picks the small candidate.

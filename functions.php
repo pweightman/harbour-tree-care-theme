@@ -9,7 +9,8 @@ defined( 'ABSPATH' ) || exit;
 
 // Derive the asset cache-busting version from the theme header so style.css and
 // site.js always bust cache on a theme update (previously hardcoded and stale).
-define( 'HARBOUR_THEME_VERSION', wp_get_theme( get_template() )->get( 'Version' ) ?: '0.6.1' );
+$harbour_theme_version = wp_get_theme( get_template() )->get( 'Version' );
+define( 'HARBOUR_THEME_VERSION', $harbour_theme_version ? $harbour_theme_version : '1.0.0' );
 
 $harbour_inc = get_template_directory() . '/inc/';
 

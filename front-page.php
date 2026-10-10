@@ -224,7 +224,7 @@ get_header();
 			foreach ( $harbour_reviews as $quote ) :
 				?>
 				<div class="quote reveal">
-					<div class="stars" aria-label="<?php esc_attr_e( '5 out of 5', 'harbour-tree-care' ); ?>">
+					<div class="stars" role="img" aria-label="<?php esc_attr_e( '5 out of 5', 'harbour-tree-care' ); ?>">
 						<?php for ( $star = 0; $star < 5; $star++ ) : ?>
 							<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
 						<?php endfor; ?>
