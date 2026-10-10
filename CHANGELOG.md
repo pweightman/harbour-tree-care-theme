@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [0.6.2] - 2026-10-10
+### Fixed
+- Logo performance: WordPress ships the custom logo with `sizes="100vw"`, so mobile browsers downloaded a full-width (up to 2560px) image for a mark that renders at ~151px — the page's LCP element and ~428 KiB of waste in PageSpeed. Now sets a correct `sizes` so the browser picks the small candidate.
+
 ## [0.6.1] - 2026-10-09
 ### Fixed
 - Asset cache-busting: `HARBOUR_THEME_VERSION` was hardcoded at `0.3.1` and never bumped, so `style.css` and `site.js` loaded with `?ver=0.3.1` on every release — meaning CDN/browser caches kept serving the *old* CSS/JS after a theme update. It's now derived from the theme header, so assets bust cache automatically on every update.

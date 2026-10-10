@@ -84,3 +84,21 @@ add_filter( 'xmlrpc_enabled', '__return_false' );
  * templates; ensure the loading optimisation stays on.
  */
 add_filter( 'wp_lazy_loading_enabled', '__return_true' );
+
+/**
+ * Right-size the header logo. WordPress sets sizes="100vw" on the custom logo,
+ * so the browser downloads a full-width image for a mark that renders at ~151px
+ * (52px tall). Tell it the real display width so it picks the small candidate,
+ * which is the site's LCP element on most pages.
+ *
+ * @param array  $attr       Image attributes.
+ * @param object $attachment Attachment post.
+ * @return array
+ */
+function harbour_logo_sizes( $attr, $attachment ) {
+	if ( (int) get_theme_mod( 'custom_logo' ) === (int) ( $attachment->ID ?? 0 ) ) {
+		$attr['sizes'] = '160px';
+	}
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'harbour_logo_sizes', 10, 2 );
