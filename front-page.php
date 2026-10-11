@@ -257,9 +257,7 @@ get_header();
 			</div>
 			<div class="reveal">
 				<div style="border:1px solid #ffffff26;border-radius:var(--radius-lg);overflow:hidden;background:#ffffff0d">
-					<div style="aspect-ratio:4/3;display:grid;place-items:center;color:#9BB0D6;font-size:var(--t-sm);text-align:center;padding:2rem">
-						<span><?php esc_html_e( 'Coverage map', 'harbour-tree-care' ); ?><br><span class="small"><?php esc_html_e( 'Static map of the LE17 catchment — generated for launch, not an embedded Google iframe (keeps the page fast and cookie-free).', 'harbour-tree-care' ); ?></span></span>
-					</div>
+					<img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/coverage-map.svg' ) ); ?>" width="760" height="570" loading="lazy" decoding="async" style="display:block;width:100%;height:auto" alt="<?php esc_attr_e( 'Coverage map centred on the yard at Ashby Magna near Lutterworth, showing Leicester, Hinckley, Nuneaton, Coventry, Rugby, Lutterworth and Market Harborough — most within about a 30-minute drive, across Leicestershire, Warwickshire, Northamptonshire, Nottinghamshire and Derbyshire.', 'harbour-tree-care' ); ?>">
 					<div style="padding:var(--s-5);border-top:1px solid #ffffff26">
 						<strong style="font-family:var(--f-display);font-size:var(--t-lg)"><?php echo esc_html( harbour_business( 'name' ) ); ?> Ltd</strong>
 						<p class="small mb-0" style="color:#B9C4D8;margin-top:.4rem"><?php echo esc_html( harbour_business( 'addr_line1' ) . ', ' . harbour_business( 'addr_line2' ) . ', ' . harbour_business( 'addr_county' ) . ' ' . harbour_business( 'addr_post' ) ); ?><br><?php esc_html_e( 'Leicestershire · Warwickshire · Northamptonshire · Nottinghamshire · Derbyshire', 'harbour-tree-care' ); ?></p>

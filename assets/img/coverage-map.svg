@@ -1,0 +1,53 @@
+<svg viewBox="0 0 760 570" width="100%" height="100%" role="img" aria-label="Coverage map centred on the Harbour Tree Care yard at Ashby Magna, showing the towns across Leicestershire, Warwickshire, Northamptonshire, Nottinghamshire and Derbyshire within about a 30-minute drive" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs><radialGradient id="hbgrad" cx="50%" cy="46%" r="70%"><stop offset="0%" stop-color="#1a2a6b"/><stop offset="100%" stop-color="#0c1550"/></radialGradient></defs>
+<rect x="0" y="0" width="760" height="570" fill="url(#hbgrad)"/>
+<line x1="0" y1="0" x2="0" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="76" y1="0" x2="76" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="152" y1="0" x2="152" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="228" y1="0" x2="228" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="304" y1="0" x2="304" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="380" y1="0" x2="380" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="456" y1="0" x2="456" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="532" y1="0" x2="532" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="608" y1="0" x2="608" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="684" y1="0" x2="684" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="760" y1="0" x2="760" y2="570" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="0" x2="760" y2="0" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="70" x2="760" y2="70" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="140" x2="760" y2="140" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="210" x2="760" y2="210" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="280" x2="760" y2="280" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="350" x2="760" y2="350" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="420" x2="760" y2="420" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="490" x2="760" y2="490" stroke="#ffffff" stroke-opacity="0.045"/>
+<line x1="0" y1="560" x2="760" y2="560" stroke="#ffffff" stroke-opacity="0.045"/>
+<circle cx="417.4" cy="260.2" r="490.2" fill="none" stroke="#3F7DC9" stroke-opacity="0.28" stroke-width="1.5" stroke-dasharray="2 6"/>
+<circle cx="417.4" cy="260.2" r="258.0" fill="#3F7DC9" fill-opacity="0.10" stroke="#5FA0E6" stroke-opacity="0.75" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="417.4" y="-6.8" fill="#9BC0EE" font-size="13" font-family="Inter,system-ui,sans-serif" text-anchor="middle" font-weight="600">~30 min drive</text>
+<line x1="417.4" y1="260.2" x2="450.2" y2="94.6" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="247.0" y2="231.9" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="164.2" y2="257.7" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="119.2" y2="424.0" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="341.1" y2="475.4" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="396.9" y2="353.7" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<line x1="417.4" y1="260.2" x2="640.8" y2="323.7" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+<circle cx="450.2" cy="94.6" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="450.2" y="112.6" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="middle" font-weight="500">Leicester</text>
+<circle cx="247.0" cy="231.9" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="257.0" y="235.9" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="start" font-weight="500">Hinckley</text>
+<circle cx="164.2" cy="257.7" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="174.2" y="261.7" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="start" font-weight="500">Nuneaton</text>
+<circle cx="119.2" cy="424.0" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="129.2" y="428.0" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="start" font-weight="500">Coventry</text>
+<circle cx="341.1" cy="475.4" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="341.1" y="465.4" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="middle" font-weight="500">Rugby</text>
+<circle cx="396.9" cy="353.7" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="386.9" y="357.7" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="end" font-weight="500">Lutterworth</text>
+<circle cx="640.8" cy="323.7" r="4.5" fill="#E7F0FB" stroke="#0c1550" stroke-width="1"/>
+<text x="630.8" y="327.7" fill="#DCE6F5" font-size="14" font-family="Inter,system-ui,sans-serif" text-anchor="end" font-weight="500">Market Harborough</text>
+<circle cx="417.4" cy="260.2" r="11" fill="#3F7DC9" fill-opacity="0.35"/>
+<circle cx="417.4" cy="260.2" r="6.5" fill="#FFFFFF" stroke="#3F7DC9" stroke-width="3"/>
+<text x="417.4" y="288.2" fill="#FFFFFF" font-size="14.5" font-family="Inter,system-ui,sans-serif" text-anchor="middle" font-weight="700">The yard · Ashby Magna</text>
+<g transform="translate(718,46)"><text x="0" y="0" fill="#9BC0EE" font-size="12" font-family="Inter,system-ui,sans-serif" text-anchor="middle" font-weight="700">N</text><line x1="0" y1="4" x2="0" y2="22" stroke="#9BC0EE" stroke-width="1.5"/><path d="M0 2 L4 9 L-4 9 Z" fill="#9BC0EE"/></g>
+<g transform="translate(34,540)"><line x1="0" y1="0" x2="129.0" y2="0" stroke="#DCE6F5" stroke-width="2"/><line x1="0" y1="-4" x2="0" y2="4" stroke="#DCE6F5" stroke-width="2"/><line x1="129.0" y1="-4" x2="129.0" y2="4" stroke="#DCE6F5" stroke-width="2"/><text x="64.5" y="-7" fill="#9BC0EE" font-size="11" font-family="Inter,system-ui,sans-serif" text-anchor="middle">10 km</text></g>
+</svg>

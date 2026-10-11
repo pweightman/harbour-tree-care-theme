@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-11
+### Added
+- Homepage "Where we work" coverage map: replaced the launch placeholder with a real, lightweight **inline SVG map** (`assets/img/coverage-map.svg`) — the yard at Ashby Magna with the surrounding towns (Leicester, Hinckley, Nuneaton, Coventry, Rugby, Lutterworth, Market Harborough) at their true geographic positions, a "~30 min drive" catchment ring, compass and scale bar. No external requests, no cookies, scales crisply at any size.
+
+
 ## [1.0.0] - 2026-10-10
 First stable release. The theme has delivered the live site across the full page set — home, services, areas, advice, contact — on the real Harbour brand identity, self-hosted fonts and self-updating from GitHub; the templates and design tokens are now considered stable.
 ### Fixed
