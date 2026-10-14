@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-10-14
+### Added
+- Footer link to a new **"Hosted using 100% renewable energy"** page (`/renewable-energy/`), with a small leaf mark in the bottom bar. The claim is deliberately scoped to the web hosting only (not the CDN or AI tooling), and the page says so plainly.
+
+
 ## [1.0.1] - 2026-10-11
 ### Added
 - Homepage "Where we work" coverage map: replaced the launch placeholder with a real, lightweight **inline SVG map** (`assets/img/coverage-map.svg`) — the yard at Ashby Magna with the surrounding towns (Leicester, Hinckley, Nuneaton, Coventry, Rugby, Lutterworth, Market Harborough) at their true geographic positions, a "~30 min drive" catchment ring, compass and scale bar. No external requests, no cookies, scales crisply at any size.

@@ -3,7 +3,7 @@ Theme Name: Harbour Tree Care
 Theme URI: https://github.com/pweightman/harbour-tree-care-theme
 Author: Patrick Weightman
 Description: Custom theme for Harbour Tree Care, family-run tree surgeons in Leicestershire since 1977.
-Version: 1.0.1
+Version: 1.0.2
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -598,6 +598,10 @@ a:focus-visible,button:focus-visible,.submenu a:focus-visible,
   filter:brightness(0) invert(1);opacity:.95;
 }
 .footer-credit{width:100%;text-align:center;color:var(--sage);font-size:var(--t-xs);padding-top:var(--s-4)}
+.footer-green{width:100%;text-align:center;padding-top:var(--s-4)}
+.footer-green a{display:inline-flex;align-items:center;gap:.4rem;color:var(--sage);font-size:var(--t-xs);text-decoration:none}
+.footer-green a:hover{color:#8fcf9e;text-decoration:underline}
+.footer-green svg{width:14px;height:14px;fill:currentColor;flex:0 0 auto}
 
 /* ---------- Job gallery ---------- */
 .job-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--s-5)}
