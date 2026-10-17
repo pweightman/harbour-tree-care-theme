@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.0.3] - 2026-10-17
+### Added
+- Real content for the three legal pages, which were empty: **Privacy policy** (`page-privacy.php`), **Terms of service** (`page-terms.php`) and **Accessibility statement** (`page-accessibility.php`). Each is a dedicated template (matching the About/Contact pattern) so the copy is version-controlled and reviewable; business details are pulled from the plugin settings, and any editor content is appended after the copy. The privacy policy reflects the site's actual data handling (enquiry form fields, Resend email delivery, Google Analytics behind the consent banner, and the Reforest/Cloudflare/Resend/Google processors). With real content these pages stay indexable rather than needing a noindex.
+
 ## [1.0.2] - 2026-10-14
 ### Added
 - Footer link to a new **"Hosted using 100% renewable energy"** page (`/renewable-energy/`), with a small leaf mark in the bottom bar. The claim is deliberately scoped to the web hosting only (not the CDN or AI tooling), and the page says so plainly.
