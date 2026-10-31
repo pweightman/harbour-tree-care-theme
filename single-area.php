@@ -89,6 +89,16 @@ while ( have_posts() ) :
 	}
 	?>
 
+	<?php if ( function_exists( 'harbour_get_faq' ) && harbour_get_faq( $pid ) ) : ?>
+		<section class="section bg-cream">
+			<div class="wrap wrap-narrow">
+				<p class="eyebrow center"><?php esc_html_e( 'Questions', 'harbour-tree-care' ); ?></p>
+				<h2 class="center" style="margin-bottom:var(--s-7)"><?php esc_html_e( 'Asked most often', 'harbour-tree-care' ); ?></h2>
+				<?php harbour_render_faq( $pid ); ?>
+			</div>
+		</section>
+	<?php endif; ?>
+
 	<?php
 	harbour_cta_band(
 		array(
