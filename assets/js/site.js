@@ -38,6 +38,31 @@
 		});
 	});
 
+	/* Guard against double submits. The enquiry form's response is slow (photo
+	   processing + email), so visitors are tempted to tap Send again, which used
+	   to create duplicate enquiries. Lock the form on first submit: disable the
+	   button, show progress, and block any further submit of the same form. The
+	   server-side fingerprint guard is the real backstop; this just stops the
+	   taps happening. */
+	Array.prototype.forEach.call(document.querySelectorAll('form.form-card'), function (form) {
+		var locked = false;
+		form.addEventListener('submit', function (e) {
+			if (locked) {
+				e.preventDefault();
+				return;
+			}
+			locked = true;
+			var btn = form.querySelector('[type="submit"]');
+			if (btn) {
+				btn.setAttribute('aria-disabled', 'true');
+				btn.dataset.label = btn.textContent;
+				btn.textContent = 'Sending…';
+				/* Disable after the event so the button's submission isn't cancelled. */
+				setTimeout(function () { btn.disabled = true; }, 0);
+			}
+		});
+	});
+
 	/* Reveal-on-scroll */
 	var reveal = document.querySelectorAll('.reveal');
 	if ('IntersectionObserver' in window) {

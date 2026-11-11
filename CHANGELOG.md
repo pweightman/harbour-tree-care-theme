@@ -4,6 +4,10 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.0.5] - 2026-11-11
+### Fixed
+- **Enquiry form double-submit lockout** (`assets/js/site.js`). The form's response is slow (the plugin processes photos and sends email before redirecting), so visitors were tapping **Send** again and creating duplicate enquiries. On first submit the form now disables the button, shows "Sending…", and blocks any further submit of the same form; if server-side validation returns the page, the fresh load restores a working button. Pairs with the harbour-core v1.0.9 server-side fingerprint guard, which remains the authoritative backstop for POST retries and CDN replays.
+
 ## [1.0.3] - 2026-10-17
 ### Added
 - Real content for the three legal pages, which were empty: **Privacy policy** (`page-privacy.php`), **Terms of service** (`page-terms.php`) and **Accessibility statement** (`page-accessibility.php`). Each is a dedicated template (matching the About/Contact pattern) so the copy is version-controlled and reviewable; business details are pulled from the plugin settings, and any editor content is appended after the copy. The privacy policy reflects the site's actual data handling (enquiry form fields, Resend email delivery, Google Analytics behind the consent banner, and the Reforest/Cloudflare/Resend/Google processors). With real content these pages stay indexable rather than needing a noindex.
