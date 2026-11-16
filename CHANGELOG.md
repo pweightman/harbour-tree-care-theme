@@ -4,6 +4,14 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-16
+### Added
+- **Search moved into the header as a magnifier toggle** (`header.php`, `assets/js/site.js`, `style.css`). A magnifying-glass button in the masthead (desktop and mobile) reveals a search panel that drops down below the header with a single, properly aligned search field + button. Escape or an outside click closes it, and focus moves into the field on open.
+### Changed
+- **`searchform.php` simplified and aligned.** The field and button were in a `.field-row` that left them on different baselines; they're now a clean flex row (`align-items:stretch`), so the input and the Search button sit level.
+### Removed
+- **In-page search boxes on the search-results and 404 templates** (`search.php`, `404.php`). These rendered a large search form as page content, which sat awkwardly above the new footer mailing-list band (two stacked light boxes). Search now lives only in the header magnifier; the 404 page keeps its hero with "Our services" / "Call" actions, and search results keep their listing.
+
 ## [1.1.0] - 2026-11-16
 ### Added
 - **"Join our mailing list" band above the footer, site-wide** (`footer.php`, `style.css`). The footer now renders harbour-core's `harbour_render_signup_band()` (guarded by `function_exists`) directly above `<footer>`, so a compact email-capture band appears on every page. Styled as a light `--paper` surface with a top border to separate it from the dark footer: heading, one line of copy, an email field + **Subscribe** button, a privacy-policy note, and a "check your inbox" confirmation state. The working form (nonce, honeypot, validation, de-duplication) and the subscribe-to-Postbag logic live in harbour-core v1.2.0; the theme owns only the markup call and the presentation. Adds a reusable `.sr-only` visually-hidden utility (used for the email field's label).

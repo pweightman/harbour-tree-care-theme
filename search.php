@@ -21,7 +21,6 @@ harbour_page_hero(
 ?>
 <section class="section">
 	<div class="wrap wrap-narrow">
-		<div style="margin-bottom:var(--s-6)"><?php get_search_form(); ?></div>
 		<?php if ( have_posts() ) : ?>
 			<div class="stack">
 				<?php

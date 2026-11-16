@@ -15,6 +15,38 @@
 		});
 	}
 
+	/* Header search toggle. The magnifier in the header reveals a search panel
+	   below it; Escape or an outside click closes it, and focus moves into the
+	   field on open. */
+	var searchToggle = document.querySelector('.search-toggle');
+	var headerSearch = document.getElementById('site-search');
+	if (searchToggle && headerSearch) {
+		var closeSearch = function () {
+			headerSearch.classList.remove('open');
+			searchToggle.setAttribute('aria-expanded', 'false');
+		};
+		searchToggle.addEventListener('click', function () {
+			var open = headerSearch.classList.toggle('open');
+			searchToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+			if (open) {
+				var field = headerSearch.querySelector('input[type="search"]');
+				if (field) { field.focus(); }
+			}
+		});
+		document.addEventListener('keydown', function (e) {
+			if (e.key === 'Escape' && headerSearch.classList.contains('open')) {
+				closeSearch();
+				searchToggle.focus();
+			}
+		});
+		document.addEventListener('click', function (e) {
+			if (headerSearch.classList.contains('open') &&
+				!headerSearch.contains(e.target) && !searchToggle.contains(e.target)) {
+				closeSearch();
+			}
+		});
+	}
+
 	/* Desktop dropdowns: reflect focus state in aria-expanded, and let Escape
 	   close the open submenu. The submenu itself is revealed by :focus-within
 	   in CSS, so this only maintains ARIA state and Escape handling. */
