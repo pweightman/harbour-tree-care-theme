@@ -9,6 +9,13 @@ defined( 'ABSPATH' ) || exit;
 ?>
 </main>
 
+<?php
+// Mailing-list sign-up band, above the footer on every page (harbour-core).
+if ( function_exists( 'harbour_render_signup_band' ) ) {
+	harbour_render_signup_band();
+}
+?>
+
 <footer class="site-footer">
 	<div class="wrap">
 		<div class="footer-grid">

@@ -3,7 +3,7 @@ Theme Name: Harbour Tree Care
 Theme URI: https://github.com/pweightman/harbour-tree-care-theme
 Author: Patrick Weightman
 Description: Custom theme for Harbour Tree Care, family-run tree surgeons in Leicestershire since 1977.
-Version: 1.0.4
+Version: 1.1.0
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -529,6 +529,47 @@ hr{border:0;border-top:1px solid var(--stone);margin:var(--s-7) 0}
 .pricebox div{background:var(--cream);border:1px solid var(--stone);border-radius:var(--radius);padding:var(--s-5)}
 .pricebox b{display:block;font-family:var(--f-display);font-size:var(--t-xl);color:var(--forest)}
 .pricebox span{font-size:var(--t-sm);color:var(--ink-70)}
+
+/* ---------- Mailing-list sign-up band ---------- */
+/* Light surface between the page content and the dark footer, site-wide
+   (rendered by harbour-core's harbour_render_signup_band()). */
+.signup-band{background:var(--paper);border-top:1px solid var(--stone)}
+.signup-band .wrap{padding-block:var(--s-7)}
+.signup-band-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--s-5) var(--s-8);flex-wrap:wrap;
+}
+.signup-band-copy{flex:1 1 320px;max-width:48ch}
+.signup-band-copy h2{margin:0 0 .3em;font-size:var(--t-xl);color:var(--forest)}
+.signup-band-copy p{margin:0;color:var(--ink-70);font-size:var(--t-base)}
+.signup-band-form{flex:1 1 360px;max-width:470px;margin:0}
+.signup-field{display:flex;gap:var(--s-3)}
+.signup-field input{
+  flex:1;min-width:0;padding:.85rem 1rem;border:1px solid var(--stone-dk);
+  border-radius:11px;background:#fff;font-size:var(--t-base);
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.signup-field input:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 3px #25569726}
+.signup-field .btn{flex:none;white-space:nowrap}
+.signup-band-note{margin:.7rem 0 0;font-size:var(--t-xs);color:var(--ink-70)}
+.signup-band-note a{color:var(--moss)}
+.signup-band-error{margin:0 0 .6rem;font-size:var(--t-sm);font-weight:600;color:#B42318}
+.signup-band-done{
+  flex:1 1 360px;max-width:470px;display:flex;flex-direction:column;gap:.25rem;
+  padding:var(--s-5);background:var(--cream);border:1px solid var(--stone);border-radius:var(--radius);
+}
+.signup-band-done strong{color:var(--forest);font-size:var(--t-lg)}
+.signup-band-done span{color:var(--ink-70);font-size:var(--t-sm)}
+@media (max-width:620px){
+  .signup-field{flex-wrap:wrap}
+  .signup-field .btn{width:100%}
+}
+
+/* Screen-reader-only utility (visually hidden, still announced). */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 
 /* ---------- Footer ---------- */
 .site-footer{background:var(--ink);color:#B9C4D8;padding-top:var(--s-8)}
