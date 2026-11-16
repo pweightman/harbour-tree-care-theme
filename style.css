@@ -3,7 +3,7 @@ Theme Name: Harbour Tree Care
 Theme URI: https://github.com/pweightman/harbour-tree-care-theme
 Author: Patrick Weightman
 Description: Custom theme for Harbour Tree Care, family-run tree surgeons in Leicestershire since 1977.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 8.1
@@ -283,10 +283,36 @@ hr{border:0;border-top:1px solid var(--stone);margin:var(--s-7) 0}
 .burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px}
 .burger span + span{margin-top:4px}
 
+/* ---------- Header search ---------- */
+.search-toggle{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:42px;height:42px;background:none;color:var(--ink);cursor:pointer;
+  border:1px solid var(--stone-dk);border-radius:10px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.search-toggle:hover{border-color:var(--moss);color:var(--moss)}
+.search-toggle svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.header-search{
+  position:absolute;left:0;right:0;top:100%;z-index:58;
+  background:var(--cream);border-bottom:1px solid var(--stone);box-shadow:var(--shadow-md);
+  display:none;
+}
+.header-search.open{display:block}
+.header-search .wrap{padding-block:var(--s-4)}
+.search-form{display:flex;gap:var(--s-3);align-items:stretch}
+.search-form .search-field{
+  flex:1;min-width:0;padding:.8rem 1rem;background:#fff;font-size:var(--t-base);
+  border:1px solid var(--stone-dk);border-radius:11px;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.search-form .search-field:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 3px #25569726}
+.search-form .btn{flex:none;white-space:nowrap}
+
 @media (max-width:1000px){
   .nav{display:none}
-  .burger{display:block}
+  .burger{display:block;margin-left:.6rem}
   .header-cta{display:none}
+  .search-toggle{margin-left:auto}
 }
 .mobile-nav{
   display:none;border-bottom:1px solid var(--stone);background:var(--cream);

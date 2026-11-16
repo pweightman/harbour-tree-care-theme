@@ -31,11 +31,5 @@ harbour_page_hero(
 		),
 	)
 );
-?>
-<section class="section">
-	<div class="wrap wrap-narrow">
-		<?php get_search_form(); ?>
-	</div>
-</section>
-<?php
+
 get_footer();

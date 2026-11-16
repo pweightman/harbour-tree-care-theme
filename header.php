@@ -70,9 +70,17 @@ defined( 'ABSPATH' ) || exit;
 			<a class="btn btn-primary" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Get a free quote', 'harbour-tree-care' ); ?></a>
 		</div>
 
+		<button class="search-toggle" aria-label="<?php esc_attr_e( 'Search', 'harbour-tree-care' ); ?>" aria-expanded="false" aria-controls="site-search">
+			<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+		</button>
+
 		<button class="burger" aria-label="<?php esc_attr_e( 'Menu', 'harbour-tree-care' ); ?>" aria-expanded="false" aria-controls="mnav">
 			<span></span><span></span><span></span>
 		</button>
+	</div>
+
+	<div class="header-search" id="site-search">
+		<div class="wrap"><?php get_search_form(); ?></div>
 	</div>
 </header>
 
