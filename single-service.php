@@ -67,12 +67,15 @@ while ( have_posts() ) :
 					$areas = get_posts(
 						array(
 							'post_type'      => 'area',
-							'posts_per_page' => 5,
+							'posts_per_page' => -1,
+							'post_status'    => 'publish',
+							'no_found_rows'  => true,
 							'orderby'        => 'menu_order title',
 							'order'          => 'ASC',
 						)
 					);
 					if ( $areas ) :
+						$areas_archive = get_post_type_archive_link( 'area' );
 						?>
 						<div class="side-card">
 							<h3><?php esc_html_e( 'In your area', 'harbour-tree-care' ); ?></h3>
@@ -81,6 +84,9 @@ while ( have_posts() ) :
 									<li><a href="<?php echo esc_url( get_permalink( $a ) ); ?>"><?php echo esc_html( get_the_title( $a ) ); ?></a></li>
 								<?php endforeach; ?>
 							</ul>
+							<?php if ( $areas_archive ) : ?>
+								<p class="side-card__more"><a href="<?php echo esc_url( $areas_archive ); ?>"><?php esc_html_e( 'All areas we cover', 'harbour-tree-care' ); ?></a></p>
+							<?php endif; ?>
 						</div>
 					<?php endif; ?>
 				</aside>

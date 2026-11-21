@@ -4,6 +4,11 @@ All notable changes to this theme are documented here. Format: [Keep a Changelog
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-11-21
+### Changed
+- **Service pages now link to every area, not just five** (`single-service.php`, SEO W7c). The "In your area" side card used `posts_per_page => 5`, so only the five oldest area pages (Hinckley, Lutterworth, Leicester, Rugby, Market Harborough) were linked from service pages — the four newest (Nuneaton, Twycross, Oadby & Wigston, Kibworth) got no internal links from six of the seven service pages despite ranking at positions 8–13. The card now lists **all published area posts** (`posts_per_page => -1`, with `post_status => publish` and `no_found_rows => true`) in menu-order/title order, so every current and future area page is linked from every service page. A small **"All areas we cover"** link to the areas archive (`get_post_type_archive_link( 'area' )`, output only when the archive URL resolves) sits below the list.
+- Adds a minimal `.side-card__more` style (`style.css`) reusing existing tokens — small text, bold, no new colours.
+
 ## [1.2.0] - 2026-11-16
 ### Added
 - **Search moved into the header as a magnifier toggle** (`header.php`, `assets/js/site.js`, `style.css`). A magnifying-glass button in the masthead (desktop and mobile) reveals a search panel that drops down below the header with a single, properly aligned search field + button. Escape or an outside click closes it, and focus moves into the field on open.
